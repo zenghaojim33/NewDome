@@ -41,6 +41,9 @@
                                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="beginLogin:" destination="zPZ-pu-wIF" eventType="touchUpInside" id="ucL-u1-drd"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePI-Xa-MDn">
                                                         <rect key="frame" x="231" y="156" width="91" height="32"/>
@@ -53,6 +56,9 @@
                                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="goRegistrate:" destination="zPZ-pu-wIF" eventType="touchUpInside" id="JFD-Eb-Tco"/>
+                                                        </connections>
                                                     </button>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pQO-J9-gVS">
                                                         <rect key="frame" x="22" y="67" width="300" height="32"/>
@@ -215,6 +221,10 @@
                     <navigationItem key="navigationItem" id="pKf-Zl-Bpu"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="passwordTextfield" destination="ma3-V4-epq" id="3YP-Dt-elx"/>
+                        <outlet property="userNameTextfield" destination="Tkz-yW-WHY" id="ELa-Zz-tIb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6eM-Cp-8Jy" sceneMemberID="firstResponder"/>
             </objects>
