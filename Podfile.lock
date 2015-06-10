@@ -48,8 +48,10 @@ PODS:
   - STCollapseTableView (0.1.1)
   - SVProgressHUD (1.1.2)
   - TMCache (1.2.3)
+  - TPKeyboardAvoiding (1.2.6)
   - UIActivityIndicator-for-SDWebImage (1.2):
     - SDWebImage (~> 3.7)
+  - UMengSocial (4.2.1)
   - WebViewJavascriptBridge (4.1.4)
 
 DEPENDENCIES:
@@ -64,7 +66,9 @@ DEPENDENCIES:
   - STCollapseTableView
   - SVProgressHUD (~> 1.0)
   - TMCache (~> 1.2.2)
+  - TPKeyboardAvoiding
   - UIActivityIndicator-for-SDWebImage
+  - UMengSocial (~> 4.2.1)
   - WebViewJavascriptBridge (~> 4.1.4)
 
 SPEC CHECKSUMS:
@@ -79,7 +83,9 @@ SPEC CHECKSUMS:
   STCollapseTableView: 472507d1cadf06b2c97914c4920ef9e8aff83e9d
   SVProgressHUD: da7a49e789af645d9279ffbca62318945a832438
   TMCache: 11589ef8c40909114a5e60132711c9a559e01d97
+  TPKeyboardAvoiding: 0797ad5f2366e2435e605202b01f3b7cff5d82cd
   UIActivityIndicator-for-SDWebImage: 8bd92c15280fbe54816448c6b14674145eee05c7
+  UMengSocial: c53282eaf74fbb41aebe431b497ed6b634cf357f
   WebViewJavascriptBridge: 259a6c8c67b492bd8079c9944b6866d3476e16ac
 
 COCOAPODS: 0.36.4
