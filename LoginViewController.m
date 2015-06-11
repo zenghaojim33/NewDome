@@ -9,6 +9,8 @@
 #import "LoginViewController.h"
 #import "NSDictionary+JsonString.h"
 #import "UserInfoModel.h"
+#import "HomeViewController.h"
+#import "UpGradeViewController.h"
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextfield;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextfield;
@@ -48,7 +50,6 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.navigationController.navigationBarHidden = YES;
     [self initNavigationBar];
 }
 
@@ -93,7 +94,7 @@
     
     NSString * jsonString = [postDict jsonStringWithPrettyPrint:YES];
     
-    NSString * link = [NSString stringWithFormat:Login,jsonString];
+    NSString * link = [[NSString stringWithFormat:Login,jsonString] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 
     MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hud.labelText = @"正在登陆...";
@@ -112,7 +113,39 @@
 
 -(void)updateData:(NSDictionary *)dict{
     
+    [USER_DEFAULT setObject:self.userNameTextfield.text forKey:@"phone"];
+    [USER_DEFAULT setObject:self.passwordTextfield.text forKey:@"password"];
+    
+    
     _userInfo = [UserInfoModel shareUserInfo];
+    _userInfo.userID = dict[@"id"];
+    _userInfo.shopid = dict[@"shopid"];
+    _userInfo.phone = self.userNameTextfield.text;
+    
+    
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    
+    NSString * usertype = [dict objectForKey:@"usertype"];
+    if ([usertype isEqualToString:@"4"])
+    {
+        //卖家
+
+        
+        HomeViewController * vc = [[UIStoryboard storyboardWithName:@"HomeView" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"HomeViewNavigationController"];
+        [self.navigationController presentViewController:vc animated:YES completion:nil];
+        
+        
+        
+    }else if ([usertype isEqualToString:@"5"])
+    {
+        //买家
+        UpGradeViewController * vc = [self.storyboard instantiateViewControllerWithIdentifier:@"UpGradeViewController"];
+        vc.shopid  = _userInfo.shopid;
+        [self.navigationController pushViewController:vc animated:YES];
+    }
+    
+    
+
     
     
     

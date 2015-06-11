@@ -27,4 +27,7 @@
 
 +(UserInfoModel *)shareUserInfo;
 
+-(void)updateModelWithDict:(NSDictionary *)dict;
+
+
 @end

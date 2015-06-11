@@ -11,7 +11,7 @@
 #define GetByCategoryID @"http://server.dome123.com/attribute.ashx?aim=getbycategoryid&cid=%@"
 
 //valueids=属性值id&categoryid=商品类别id&pagesize=每页记录数&pageindex=第几页&sort=排序字段
-#define  Getbycategoryandvalueid  @"http://server.dome123.com/product.ashx?aim=getbycategoryandvalueid&valueids=%@&categoryid=%@&pagesize=24&pageindex=%d&sort=%@&sequence=%@&uid='%@'&isshow=%@"
+#define  Getbycategoryandvalueid  @"http://server.dome123.com/product.ashx?aim=getbycategoryandvalueid&valueids=%@&categoryid=%@&pagesize=24&pageindex=%lu&sort=%@&sequence=%@&uid='%@'&isshow=%@"
 
 
 

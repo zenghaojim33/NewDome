@@ -20,7 +20,7 @@
 
 #import <AFNetworking.h>
 #import <Mantle/Mantle.h>
-#import <BlocksKit.h>
+#import <BlocksKit+UIKit.h>
 #import <Masonry.h>
 #import <SVProgressHUD.h>
 #import <MJRefresh.h>
@@ -30,6 +30,11 @@
 #import "HTTPKEY.h"
 #import <libextobjc/EXTScope.h>
 #import "HTTPRequestManager.h"
+#import "UserInfoModel.h"
+#import "NSDictionary+JsonString.h"
+#import "NSArray+JSONString.h"
+#import <Mantle/Mantle.h>
+#import <TMCache.h>
 
 #endif
 

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>B2BA7369-015F-423A-A9B2-2549A0A12BB5</string>
+	<key>IDESourceControlProjectName</key>
+	<string>NewDome</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>169013B5137694C03F713E66FC92FBEF46C5FC89</key>
+		<string>https://github.com/zenghaojim33/NewDome.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>NewDome.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>169013B5137694C03F713E66FC92FBEF46C5FC89</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/zenghaojim33/NewDome.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>169013B5137694C03F713E66FC92FBEF46C5FC89</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>169013B5137694C03F713E66FC92FBEF46C5FC89</string>
+			<key>IDESourceControlWCCName</key>
+			<string>NewDome</string>
+		</dict>
+	</array>
+</dict>
+</plist>

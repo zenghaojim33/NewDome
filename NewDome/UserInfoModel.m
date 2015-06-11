@@ -23,7 +23,24 @@
     return userInfoModel;
 }
 
-
+-(void)updateModelWithDict:(NSDictionary *)dict
+{
+    
+    
+    self.shopname=[dict objectForKey:@"shopname"];
+    self.shopinfo=[dict objectForKey:@"shopinfo"];
+    self.acountname = dict[@"acountname"];
+    self.address = dict[@"address"];
+    self.area = dict[@"area"];
+    self.bank = dict[@"bank"];
+    self.bankno = dict[@"bankno"];
+    self.certificate = dict[@"certificate"];
+    self.city = dict[@"city"];
+    self.email = dict[@"email"];
+    self.provinces = dict[@"provinces"];
+    
+    
+}
 
 
 @end
