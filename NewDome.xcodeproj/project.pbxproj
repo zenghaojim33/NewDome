@@ -46,6 +46,13 @@
 		15E9F65F1B2AAB8700D0CB50 /* CategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E9F65E1B2AAB8700D0CB50 /* CategoryModel.m */; };
 		15E9F6621B2AAF9800D0CB50 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E9F6611B2AAF9800D0CB50 /* CollectionViewCell.m */; };
 		15E9F6651B2ABD8500D0CB50 /* GoodsInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E9F6641B2ABD8500D0CB50 /* GoodsInfoViewController.m */; };
+		15E9F6681B2AE03100D0CB50 /* ChangeInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E9F6671B2AE03100D0CB50 /* ChangeInfoViewController.m */; };
+		15E9F66C1B2AE06300D0CB50 /* BankViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E9F66A1B2AE06300D0CB50 /* BankViewController.m */; };
+		15E9F66D1B2AE06300D0CB50 /* BankCode.json in Resources */ = {isa = PBXBuildFile; fileRef = 15E9F66B1B2AE06300D0CB50 /* BankCode.json */; };
+		15E9F6701B2AE07200D0CB50 /* BWMBankCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E9F66F1B2AE07200D0CB50 /* BWMBankCoder.m */; };
+		15E9F6781B2AE0DC00D0CB50 /* RegExpValidate.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E9F6751B2AE0DC00D0CB50 /* RegExpValidate.m */; };
+		15E9F6791B2AE0DC00D0CB50 /* RegExpValidateFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E9F6771B2AE0DC00D0CB50 /* RegExpValidateFormat.m */; };
+		15E9F67C1B2AE36600D0CB50 /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E9F67B1B2AE36600D0CB50 /* UICountingLabel.m */; };
 		15F1C63A1B28182800D9CB09 /* 1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 15F1C6391B28182800D9CB09 /* 1024.png */; };
 		15F1C6411B2820D800D9CB09 /* UIImageView+FadeInEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F1C63C1B2820D800D9CB09 /* UIImageView+FadeInEffect.m */; };
 		15F1C6421B2820D800D9CB09 /* UIView+IBAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F1C63E1B2820D800D9CB09 /* UIView+IBAppearance.m */; };
@@ -755,6 +762,19 @@
 		15E9F6611B2AAF9800D0CB50 /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
 		15E9F6631B2ABD8500D0CB50 /* GoodsInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsInfoViewController.h; sourceTree = "<group>"; };
 		15E9F6641B2ABD8500D0CB50 /* GoodsInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsInfoViewController.m; sourceTree = "<group>"; };
+		15E9F6661B2AE03100D0CB50 /* ChangeInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeInfoViewController.h; sourceTree = "<group>"; };
+		15E9F6671B2AE03100D0CB50 /* ChangeInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeInfoViewController.m; sourceTree = "<group>"; };
+		15E9F6691B2AE06300D0CB50 /* BankViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BankViewController.h; sourceTree = "<group>"; };
+		15E9F66A1B2AE06300D0CB50 /* BankViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BankViewController.m; sourceTree = "<group>"; };
+		15E9F66B1B2AE06300D0CB50 /* BankCode.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BankCode.json; sourceTree = "<group>"; };
+		15E9F66E1B2AE07200D0CB50 /* BWMBankCoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWMBankCoder.h; sourceTree = "<group>"; };
+		15E9F66F1B2AE07200D0CB50 /* BWMBankCoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWMBankCoder.m; sourceTree = "<group>"; };
+		15E9F6741B2AE0DC00D0CB50 /* RegExpValidate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegExpValidate.h; sourceTree = "<group>"; };
+		15E9F6751B2AE0DC00D0CB50 /* RegExpValidate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegExpValidate.m; sourceTree = "<group>"; };
+		15E9F6761B2AE0DC00D0CB50 /* RegExpValidateFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegExpValidateFormat.h; sourceTree = "<group>"; };
+		15E9F6771B2AE0DC00D0CB50 /* RegExpValidateFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegExpValidateFormat.m; sourceTree = "<group>"; };
+		15E9F67A1B2AE36600D0CB50 /* UICountingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICountingLabel.h; sourceTree = "<group>"; };
+		15E9F67B1B2AE36600D0CB50 /* UICountingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICountingLabel.m; sourceTree = "<group>"; };
 		15F1C6381B28176200D9CB09 /* HTTPKEY.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPKEY.h; sourceTree = "<group>"; };
 		15F1C6391B28182800D9CB09 /* 1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1024.png; sourceTree = "<group>"; };
 		15F1C63B1B2820D800D9CB09 /* UIImageView+FadeInEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+FadeInEffect.h"; sourceTree = "<group>"; };
@@ -941,6 +961,7 @@
 				15F1C8181B291AF900D9CB09 /* Setting */,
 				15F1C64E1B28238300D9CB09 /* HTTPRequest */,
 				15F1C6361B2813AD00D9CB09 /* Categories */,
+				15E9F6711B2AE07D00D0CB50 /* Tools */,
 				158336DB1B27EBCF003E673E /* Third Parties */,
 				158336DA1B27EBA1003E673E /* XIBs & Storyboards */,
 				15F1C8A11B29340200D9CB09 /* SpreadDome */,
@@ -1421,6 +1442,22 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		15E9F6711B2AE07D00D0CB50 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				15E9F67A1B2AE36600D0CB50 /* UICountingLabel.h */,
+				15E9F67B1B2AE36600D0CB50 /* UICountingLabel.m */,
+				15E9F6741B2AE0DC00D0CB50 /* RegExpValidate.h */,
+				15E9F6751B2AE0DC00D0CB50 /* RegExpValidate.m */,
+				15E9F6761B2AE0DC00D0CB50 /* RegExpValidateFormat.h */,
+				15E9F6771B2AE0DC00D0CB50 /* RegExpValidateFormat.m */,
+				15E9F66B1B2AE06300D0CB50 /* BankCode.json */,
+				15E9F66E1B2AE07200D0CB50 /* BWMBankCoder.h */,
+				15E9F66F1B2AE07200D0CB50 /* BWMBankCoder.m */,
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
 		15F1C6361B2813AD00D9CB09 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
@@ -1608,8 +1645,12 @@
 		15F1C8181B291AF900D9CB09 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				15E9F6661B2AE03100D0CB50 /* ChangeInfoViewController.h */,
+				15E9F6671B2AE03100D0CB50 /* ChangeInfoViewController.m */,
 				15F1C81E1B2927B300D9CB09 /* SettingViewController.h */,
 				15F1C81F1B2927B300D9CB09 /* SettingViewController.m */,
+				15E9F6691B2AE06300D0CB50 /* BankViewController.h */,
+				15E9F66A1B2AE06300D0CB50 /* BankViewController.m */,
 			);
 			name = Setting;
 			sourceTree = "<group>";
@@ -1923,6 +1964,7 @@
 				15F1C6F01B28306F00D9CB09 /* 物流详细_看图王.jpg in Resources */,
 				15F1C7661B28307D00D9CB09 /* 60_bubble1.png in Resources */,
 				15F1C7081B28307700D9CB09 /* 120_banknote1.png in Resources */,
+				15E9F66D1B2AE06300D0CB50 /* BankCode.json in Resources */,
 				15F1C7431B28307D00D9CB09 /* 30_add1@3x.png in Resources */,
 				15F1C6B91B28306500D9CB09 /* dome123.png in Resources */,
 				15F1C8671B29305C00D9CB09 /* 180_banknote1.png in Resources */,
@@ -2118,6 +2160,7 @@
 				15F1C7E71B28354B00D9CB09 /* CandleChartDataSet.swift in Sources */,
 				15F1C7D31B28354B00D9CB09 /* HorizontalBarChartView.swift in Sources */,
 				15F1C80A1B28354B00D9CB09 /* ChartColorTemplates.swift in Sources */,
+				15E9F6701B2AE07200D0CB50 /* BWMBankCoder.m in Sources */,
 				15F1C7DE1B28354B00D9CB09 /* ChartXAxis.swift in Sources */,
 				15F1C7F01B28354B00D9CB09 /* PieChartDataSet.swift in Sources */,
 				15F1C7E01B28354B00D9CB09 /* BarChartData.swift in Sources */,
@@ -2154,6 +2197,7 @@
 				158337A41B27EF4D003E673E /* CNCityPickerView.m in Sources */,
 				15F1C8001B28354B00D9CB09 /* ChartXAxisRendererRadarChart.swift in Sources */,
 				15F1C7CD1B28354B00D9CB09 /* ChartAnimator.swift in Sources */,
+				15E9F6781B2AE0DC00D0CB50 /* RegExpValidate.m in Sources */,
 				15F1C8101B28354B00D9CB09 /* ChartUtils.swift in Sources */,
 				15F1C7E21B28354B00D9CB09 /* BarChartDataSet.swift in Sources */,
 				15F1C7D71B28354B00D9CB09 /* RadarChartView.swift in Sources */,
@@ -2161,6 +2205,7 @@
 				15F1C7FC1B28354B00D9CB09 /* ChartRendererBase.swift in Sources */,
 				15F1C8051B28354B00D9CB09 /* HorizontalBarChartRenderer.swift in Sources */,
 				15F1C7F81B28354B00D9CB09 /* CandleStickChartRenderer.swift in Sources */,
+				15E9F66C1B2AE06300D0CB50 /* BankViewController.m in Sources */,
 				15F1C7E51B28354B00D9CB09 /* CandleChartData.swift in Sources */,
 				15F1C80E1B28354B00D9CB09 /* ChartTransformer.swift in Sources */,
 				15F1C6461B2820F700D9CB09 /* BaseViewController.m in Sources */,
@@ -2172,6 +2217,7 @@
 				158337A21B27EF4D003E673E /* CNCityAreaFactory.m in Sources */,
 				158337721B27EBFA003E673E /* split.c in Sources */,
 				15F1C6511B28240100D9CB09 /* NSDictionary+JsonString.m in Sources */,
+				15E9F6681B2AE03100D0CB50 /* ChangeInfoViewController.m in Sources */,
 				15F1C7F71B28354B00D9CB09 /* BarChartRenderer.swift in Sources */,
 				15F1C8141B2838AB00D9CB09 /* UserInfoModel.m in Sources */,
 				15F1C6431B2820D800D9CB09 /* UIAlertView+Blocks.m in Sources */,
@@ -2179,6 +2225,7 @@
 				15F1C7ED1B28354B00D9CB09 /* LineChartDataSet.swift in Sources */,
 				158337711B27EBFA003E673E /* rscode.c in Sources */,
 				15F1C7D01B28354B00D9CB09 /* CandleStickChartView.swift in Sources */,
+				15E9F67C1B2AE36600D0CB50 /* UICountingLabel.m in Sources */,
 				15F1C7EC1B28354B00D9CB09 /* LineChartData.swift in Sources */,
 				15F1C8021B28354B00D9CB09 /* ChartYAxisRendererHorizontalBarChart.swift in Sources */,
 				1583347A1B27E232003E673E /* AppDelegate.m in Sources */,
@@ -2213,6 +2260,7 @@
 				15F1C7EF1B28354B00D9CB09 /* PieChartData.swift in Sources */,
 				15F1C7E91B28354B00D9CB09 /* ChartDataEntry.swift in Sources */,
 				15F1C8071B28354B00D9CB09 /* PieChartRenderer.swift in Sources */,
+				15E9F6791B2AE0DC00D0CB50 /* RegExpValidateFormat.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

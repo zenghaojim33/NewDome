@@ -20,7 +20,7 @@
 #import "SettingViewController.h"
 //#import "MyInfoViewController.h"
 //
-//#import "ChangeInfoViewController.h"
+#import "ChangeInfoViewController.h"
 //
 //#import "GuestModel.h"
 @interface HomeViewController ()
@@ -179,7 +179,7 @@
 #pragma mark 设置
 - (IBAction)TouchSetting:(UIButton *)button
 {
-    SettingViewController * vc = [[UIStoryboard storyboardWithName:@"Setting&QRCode" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"SettingViewController"];;
+    SettingViewController * vc = [[UIStoryboard storyboardWithName:@"Setting&QRCode" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"SettingViewController"];
     [self.navigationController pushViewController:vc animated:YES];
 }
 //#pragma mark 订单
@@ -189,11 +189,11 @@
 //    [self.navigationController pushViewController:vc animated:YES];
 //}
 //#pragma mark 个人信息
-//- (IBAction)TouchInfoButton:(UIButton *)button
-//{
-//    ChangeInfoViewController * vc =[self.storyboard instantiateViewControllerWithIdentifier:@"ChangeInfoViewController"];
-//    [self.navigationController pushViewController:vc animated:YES];
-//}
+- (IBAction)TouchInfoButton:(UIButton *)button
+{
+    ChangeInfoViewController * vc =[[UIStoryboard storyboardWithName:@"Setting&QRCode" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"ChangeInfoViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 //- (void)didReceiveMemoryWarning {
 //    [super didReceiveMemoryWarning];
 //    // Dispose of any resources that can be recreated.
