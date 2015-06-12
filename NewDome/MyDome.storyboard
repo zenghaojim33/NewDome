@@ -425,9 +425,9 @@
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
+                                            <exclude reference="Cky-S7-s0P"/>
                                             <exclude reference="QDq-tb-eOO"/>
                                             <exclude reference="tTI-bi-dCT"/>
-                                            <exclude reference="Cky-S7-s0P"/>
                                         </mask>
                                     </variation>
                                     <variation key="heightClass=compact-widthClass=regular" misplaced="YES">
@@ -476,7 +476,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REN SKINCARE 永葆青春紧致柔滑精华液 ,30ml" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bIQ-wh-tk3">
                                                             <rect key="frame" x="116" y="10" width="196" height="43"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="佣金:￥123" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yE0-AG-9Ri">
@@ -584,8 +584,8 @@
                                                             <exclude reference="jCB-3u-Uye"/>
                                                             <exclude reference="dCZ-Al-NrD"/>
                                                             <exclude reference="fS8-fg-Cge"/>
-                                                            <exclude reference="Pvo-C3-Eiq"/>
                                                             <exclude reference="2Gw-DE-sHS"/>
+                                                            <exclude reference="Pvo-C3-Eiq"/>
                                                         </mask>
                                                     </variation>
                                                 </view>
@@ -637,13 +637,14 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="TouchDone:" destination="DWp-rX-Ra7" eventType="touchUpInside" id="bY3-R8-ZSr"/>
+                                    <action selector="beginOffsale:" destination="DWp-rX-Ra7" eventType="touchUpInside" id="9gJ-v0-sDs"/>
                                 </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="confirmButton" destination="869-uE-Ulh" id="H0O-Go-2Ex"/>
                         <outlet property="myDomeTableView" destination="ZPG-KK-dj9" id="6mi-fP-iED"/>
                     </connections>
                 </viewController>

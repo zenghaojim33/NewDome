@@ -7,7 +7,7 @@
 //
 @protocol MyDomeTableViewCellDelegate;
 #import <UIKit/UIKit.h>
-
+#import "MyDomeProductModel.h"
 @interface MyDomeTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIView *ButtonView;
 @property (weak, nonatomic) IBOutlet UIImageView *TitleImages;
@@ -20,7 +20,7 @@
 @property (nonatomic) BOOL isMyDome;
 @property (nonatomic) BOOL isSelect;
 
-//-(void)updateCellWithModel:(ProductModel *)model;
+-(void)updateCellWithModel:(MyDomeProductModel *)model withIndexPath:(NSIndexPath *)indexPath;;
 
 
 @end

@@ -20,6 +20,8 @@
 @property(nonatomic,strong)NSString * productName;
 @property(nonatomic,strong)NSString * shopPrice;
 @property(nonatomic,strong)NSArray * TitleImages;
+@property(nonatomic,copy)NSIndexPath * indexPath;
 
+@property(nonatomic,assign)BOOL isSelected;
 
 @end

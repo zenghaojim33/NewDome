@@ -9,7 +9,7 @@
 #import "HomeViewController.h"
 
 #import "MyDomeViewController.h"
-//#import "GoodsViewController.h"
+#import "GoodsViewController.h"
 ////#import "CommodityViewController.h"
 //#import "OrderManagementViewController.h"
 //#import "OrderViewController.h"
@@ -139,13 +139,12 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 //
-//#pragma mark 货品上架
-//- (IBAction)TouchGoods:(id)sender
-//{
-//    GoodsViewController * vc = [self.storyboard instantiateViewControllerWithIdentifier:@"GoodsViewController"];
-//    vc.title = @"服装";
-//    [self.navigationController pushViewController:vc animated:YES];
-//}
+#pragma mark 货品上架
+- (IBAction)TouchGoods:(id)sender
+{
+    GoodsViewController * vc = [[UIStoryboard storyboardWithName:@"GoodsView" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"GoodsViewController"];;
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 #pragma mark 销售管理
 //- (IBAction)TouchCommodity:(UIButton *)button

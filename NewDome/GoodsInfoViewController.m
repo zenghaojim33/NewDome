@@ -1,49 +1,45 @@
 //
-//  MyDomeViewController.m
+//  GoodsInfoViewController.m
 //  NewDome
 //
-//  Created by Anson on 15/6/11.
+//  Created by Anson on 15/6/12.
 //  Copyright (c) 2015年 Anson Tsang. All rights reserved.
 //
 
-#import "MyDomeViewController.h"
-#import "DMBaseModel.h"
+#import "GoodsInfoViewController.h"
+#import "MyDomeProductModel.h" // 这里和我的都美公用同一个model
 #import "MyDomeTableViewCell.h"
-#import "MyDomeProductModel.h"
 #import "UMSocialSnsService.h"
 #import "UMSocialWechatHandler.h"
 #import "UMSocial.h"
 #import "WXApi.h"
-@interface MyDomeViewController ()<UITableViewDataSource,UITableViewDelegate,MyDomeTableViewCellDelegate,UMSocialUIDelegate>
-@property (weak, nonatomic) IBOutlet UITableView *myDomeTableView;
+@interface GoodsInfoViewController ()<UITableViewDataSource,UITableViewDelegate,MyDomeTableViewCellDelegate,UMSocialUIDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *confirmButton;
+@property (weak, nonatomic) IBOutlet UITableView *myDomeTableView;
 
 @end
+#define kCellIdentifier @"ProductCell"
 
-#define kCellIdentifier @"MyDomeCell"
-@implementation MyDomeViewController{
+@implementation GoodsInfoViewController{
+    
     
     UserInfoModel * _userInfo;
-    NSString * _categoryid;
     NSString * _valueid;
     NSInteger  _page;
     NSString * _sort;
     NSString * _sequence;
     NSMutableArray * _productModelArray;
     NSMutableArray * _selectedModelArray;
-    
 }
 
 
 
-#pragma mark ---- Life Cycle
-
+#pragma mark ----   Life Cycle
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     
-    self.title = @"我的店铺";
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc] init];
     backItem.title = @"";
     
@@ -60,7 +56,7 @@
     
     //初始化请求参数
     _page = 1;
-    _valueid = _categoryid = @"";
+    _valueid = @"";
     _sort = @"price";
     
     //
@@ -69,40 +65,38 @@
     
     
     [self getData];
-    
 }
 
-#pragma mark ---- Private Methods
 
+#pragma mark ---- HTTP Methods
 
-
-
--(void)getData{
+- (void)getData
+{
     
-    NSString * uid = _userInfo.userID;
     
-    NSDictionary * postDict = @{@"uid":[NSString stringWithFormat:@"'%@'",uid],
+    
+    NSDictionary * postDict = @{@"uid":@"",
                                 @"pagesize":@24,
-                                @"categoryid":_categoryid,
+                                @"categoryid":self.categoryId,
                                 @"isshow":@1,
                                 @"sort":_sort,
                                 @"sequence":@"asc",
                                 @"pageindex":@(_page),
                                 @"valueids":@"",
-                                @"uisshow":@1
+                                @"uisshow":@2
                                 };
     NSString * postJSON = [postDict jsonStringWithPrettyPrint:YES];
     NSString * link = [[NSString stringWithFormat:Getbycategoryandvalueid,postJSON] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
+
     
-    MBProgressHUD * hud =[MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hud.labelText = @"加载商品中...";
+    MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    hud.labelText = @"正在获取数据";
     
     @weakify(self);
     [HTTPRequestManager getURL:link andParameter:nil onCompletion:^(id responseObject, NSError *error) {
         @strongify(self);
-
-        NSMutableArray * response = [responseObject copy];
+        NSArray * response = [responseObject copy];
         for (NSInteger i=0;i < response.count;i++){
             
             MyDomeProductModel * model = [MyDomeProductModel initWithDict:response[i]];
@@ -110,21 +104,27 @@
             [_productModelArray addObject:model];
             
         }
-        
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.myDomeTableView reloadData];
             [MBProgressHUD hideHUDForView:self.view animated:YES];
         });
+
         
     }];
-    
-    
 }
 
 
 
 
-#pragma mark -----UITableView Delegate
+#pragma mark ---- Private Methods
+- (IBAction)beginOnSale:(id)sender {
+    
+    
+    
+    
+    
+}
+
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -145,28 +145,6 @@
     
     return _productModelArray.count;
 }
-
-
-
--(void)TouchCopyForTag:(long)tag{
-    
-    
-    MyDomeProductModel * model = _productModelArray[tag];
-    
-    
-    NSString * link = [NSString stringWithFormat:CopyProduct,model.productId,_userInfo.userID];
-    
-    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
-    
-    pasteboard.string = link;
-    
-    UIAlertView * alert = [UIAlertView bk_alertViewWithTitle:@"复制成功"];
-    [alert show];
-    
-    
-}
-
-
 
 -(void)TouchShareForTag:(long)tag{
     
@@ -218,9 +196,9 @@
     model.isSelected = !model.isSelected;
     
     [_selectedModelArray containsObject:model] ? [_selectedModelArray removeObject:model] : [_selectedModelArray addObject: model];
-
-
-    _selectedModelArray.count == 0 ? [self.confirmButton setTitle:@"下架" forState:UIControlStateNormal] : [self.confirmButton setTitle:[NSString stringWithFormat:@"下架(%lu)",_selectedModelArray.count] forState:UIControlStateNormal];
+    
+    
+    _selectedModelArray.count == 0 ? [self.confirmButton setTitle:@"上架" forState:UIControlStateNormal] : [self.confirmButton setTitle:[NSString stringWithFormat:@"上架(%lu)",_selectedModelArray.count] forState:UIControlStateNormal];
     
     [self.myDomeTableView reloadData];
 }
@@ -237,7 +215,7 @@
     }else{
         
         MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        hud.labelText = @"正在下架商品";
+        hud.labelText = @"正在上架商品";
         NSMutableString * selectedProductString = [NSMutableString stringWithString:@""];
         NSMutableArray * selectedIndexPathes = [NSMutableArray array];
         for (MyDomeProductModel * model in _selectedModelArray){
@@ -248,11 +226,10 @@
         //删除最后一个逗号
         NSString * deletedProductString = [selectedProductString substringToIndex:(selectedProductString.length -1)];
         
-        //不知道为嘛要给uid加单引号
         
         NSDictionary * postDict = @{@"uid":_userInfo.userID,
                                     @"pidlist":deletedProductString,
-                                    @"isshow":@0};
+                                    @"isshow":@1};
         NSString * jsonData = [postDict jsonStringWithPrettyPrint:YES];
         NSString * link = [[NSString stringWithFormat:OnOffSaleAPI,jsonData] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         
@@ -262,35 +239,26 @@
             if (responseObject[@"status"]){
                 
                 UIAlertView * alertView = [[UIAlertView alloc]init];
-                alertView.message = @"下架成功";
+                alertView.message = @"上架成功";
                 [alertView addButtonWithTitle:@"确定"];
                 [alertView show];
                 
                 
             }
             
-            NSMutableIndexSet * indexPathNumbers = [[NSMutableIndexSet alloc]init];
-            
-            for (NSIndexPath * indexPath in selectedIndexPathes)
-            {
-                [indexPathNumbers addIndex:indexPath.row];
-            }
-            [_productModelArray removeObjectsAtIndexes:indexPathNumbers];
-            [self.myDomeTableView beginUpdates];
-            [self.myDomeTableView deleteRowsAtIndexPaths:selectedIndexPathes withRowAnimation:UITableViewRowAnimationFade];
-            [self.myDomeTableView endUpdates];
-            [_selectedModelArray removeAllObjects];
-            
             [MBProgressHUD hideHUDForView:self.view animated:YES];
-
+            
             
         }];
         
         
     }
     
-
+    
     
 }
+
+
+
 
 @end

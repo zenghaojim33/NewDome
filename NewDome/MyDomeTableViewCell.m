@@ -31,32 +31,34 @@
 }
 
 
-//-(void)updateCellWithModel:(ProductModel *)model
-//{
-//    self.selectionStyle = UITableViewCellAccessoryNone;
-//
-//    self.productName.text = model.productName;
-//    float price = [model.price floatValue];
-//    self.price.text = [NSString stringWithFormat:@"¥%.2f",price];
-//    self.categoryName.text = model.categoryName;
-//    self.TitleImages.image = [UIImage imageNamed:@""];
-//    NSString * path = model.TitleImages[0];
-//    [self.TitleImages setImageUrlWithFadeInEffect:path];
-//    
-//    float shopPrice = model.shopPrice.floatValue;
-//    self.inPrice.text = [NSString stringWithFormat:@"佣金:人民币%.2f",(price - shopPrice)*0.52];
-//    
-//    if (model.isSelect == YES)
-//    {
-//        [self.CellButton setTitle:@"已选择" forState:UIControlStateNormal];
-//        [self.CellButton setTitleColor:[UIColor colorWithRed:199/255.0 green:69/255.0 blue:67/255.0 alpha:1] forState:UIControlStateNormal];
-//        [self.CellButton setImage:[UIImage imageNamed:@"25_right2.png"] forState:UIControlStateNormal];
-//    }else{
-//        self.isMyDome? [self.CellButton setTitle:@"下架" forState:UIControlStateNormal] : [self.CellButton setTitle:@"上架" forState:UIControlStateNormal];
-//
-//         [self.CellButton setTitleColor:[UIColor scrollViewTexturedBackgroundColor] forState:UIControlStateNormal];
-//        [self.CellButton setImage:[UIImage imageNamed:@"25_cannel1.png"] forState:UIControlStateNormal];
-//    }
-//}
+
+
+-(void)updateCellWithModel:(MyDomeProductModel *)model withIndexPath:(NSIndexPath *)indexPath
+{
+    self.selectionStyle = UITableViewCellAccessoryNone;
+    model.indexPath = indexPath;
+    self.productName.text = model.productName;
+    float price = [model.price floatValue];
+    self.price.text = [NSString stringWithFormat:@"¥%.2f",price];
+    self.categoryName.text = model.categoryName;
+    self.TitleImages.image = [UIImage imageNamed:@""];
+    NSString * path = model.TitleImages[0][@"path"];
+    [self.TitleImages setImageUrlWithFadeInEffect:path];
+    
+    float shopPrice = model.shopPrice.floatValue;
+    self.inPrice.text = [NSString stringWithFormat:@"佣金:人民币%.2f",(price - shopPrice)*0.52];
+    
+    if (model.isSelected == YES)
+    {
+        [self.CellButton setTitle:@"已选择" forState:UIControlStateNormal];
+        [self.CellButton setTitleColor:[UIColor colorWithRed:199/255.0 green:69/255.0 blue:67/255.0 alpha:1] forState:UIControlStateNormal];
+        [self.CellButton setImage:[UIImage imageNamed:@"25_right2.png"] forState:UIControlStateNormal];
+    }else{
+        self.isMyDome? [self.CellButton setTitle:@"下架" forState:UIControlStateNormal] : [self.CellButton setTitle:@"上架" forState:UIControlStateNormal];
+
+         [self.CellButton setTitleColor:[UIColor scrollViewTexturedBackgroundColor] forState:UIControlStateNormal];
+        [self.CellButton setImage:[UIImage imageNamed:@"25_cannel1.png"] forState:UIControlStateNormal];
+    }
+}
 
 @end

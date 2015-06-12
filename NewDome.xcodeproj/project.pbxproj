@@ -41,6 +41,11 @@
 		158337C01B27F13F003E673E /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 158337BF1B27F13F003E673E /* libsqlite3.dylib */; };
 		158337C21B27F159003E673E /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 158337C11B27F159003E673E /* libstdc++.dylib */; };
 		158337C41B27F166003E673E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 158337C31B27F166003E673E /* QuartzCore.framework */; };
+		15E9F6571B2AA46C00D0CB50 /* GoodsView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15E9F6561B2AA46C00D0CB50 /* GoodsView.storyboard */; };
+		15E9F65B1B2AA50600D0CB50 /* GoodsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E9F65A1B2AA50600D0CB50 /* GoodsViewController.m */; };
+		15E9F65F1B2AAB8700D0CB50 /* CategoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E9F65E1B2AAB8700D0CB50 /* CategoryModel.m */; };
+		15E9F6621B2AAF9800D0CB50 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E9F6611B2AAF9800D0CB50 /* CollectionViewCell.m */; };
+		15E9F6651B2ABD8500D0CB50 /* GoodsInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E9F6641B2ABD8500D0CB50 /* GoodsInfoViewController.m */; };
 		15F1C63A1B28182800D9CB09 /* 1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 15F1C6391B28182800D9CB09 /* 1024.png */; };
 		15F1C6411B2820D800D9CB09 /* UIImageView+FadeInEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F1C63C1B2820D800D9CB09 /* UIImageView+FadeInEffect.m */; };
 		15F1C6421B2820D800D9CB09 /* UIView+IBAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F1C63E1B2820D800D9CB09 /* UIView+IBAppearance.m */; };
@@ -741,6 +746,15 @@
 		158337BF1B27F13F003E673E /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		158337C11B27F159003E673E /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
 		158337C31B27F166003E673E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		15E9F6561B2AA46C00D0CB50 /* GoodsView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GoodsView.storyboard; sourceTree = "<group>"; };
+		15E9F6591B2AA50600D0CB50 /* GoodsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsViewController.h; sourceTree = "<group>"; };
+		15E9F65A1B2AA50600D0CB50 /* GoodsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsViewController.m; sourceTree = "<group>"; };
+		15E9F65D1B2AAB8700D0CB50 /* CategoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryModel.h; sourceTree = "<group>"; };
+		15E9F65E1B2AAB8700D0CB50 /* CategoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryModel.m; sourceTree = "<group>"; };
+		15E9F6601B2AAF9800D0CB50 /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
+		15E9F6611B2AAF9800D0CB50 /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
+		15E9F6631B2ABD8500D0CB50 /* GoodsInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoodsInfoViewController.h; sourceTree = "<group>"; };
+		15E9F6641B2ABD8500D0CB50 /* GoodsInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoodsInfoViewController.m; sourceTree = "<group>"; };
 		15F1C6381B28176200D9CB09 /* HTTPKEY.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPKEY.h; sourceTree = "<group>"; };
 		15F1C6391B28182800D9CB09 /* 1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1024.png; sourceTree = "<group>"; };
 		15F1C63B1B2820D800D9CB09 /* UIImageView+FadeInEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+FadeInEffect.h"; sourceTree = "<group>"; };
@@ -922,6 +936,7 @@
 		158334731B27E232003E673E /* NewDome */ = {
 			isa = PBXGroup;
 			children = (
+				15E9F6581B2AA4AF00D0CB50 /* GoodsView */,
 				15F1C8CB1B296EF900D9CB09 /* MyDomeView */,
 				15F1C8181B291AF900D9CB09 /* Setting */,
 				15F1C64E1B28238300D9CB09 /* HTTPRequest */,
@@ -1323,6 +1338,7 @@
 				15F1C89F1B2933C600D9CB09 /* SpreadDome.storyboard */,
 				15F1C8C11B293EA400D9CB09 /* HomeView.storyboard */,
 				15F1C8C91B296B4900D9CB09 /* MyDome.storyboard */,
+				15E9F6561B2AA46C00D0CB50 /* GoodsView.storyboard */,
 			);
 			name = "XIBs & Storyboards";
 			sourceTree = "<group>";
@@ -1380,6 +1396,29 @@
 				1583379D1B27EF4D003E673E /* CNCityAreaModel.m */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		15E9F6581B2AA4AF00D0CB50 /* GoodsView */ = {
+			isa = PBXGroup;
+			children = (
+				15E9F65C1B2AAB6F00D0CB50 /* Models */,
+				15E9F6601B2AAF9800D0CB50 /* CollectionViewCell.h */,
+				15E9F6611B2AAF9800D0CB50 /* CollectionViewCell.m */,
+				15E9F6591B2AA50600D0CB50 /* GoodsViewController.h */,
+				15E9F65A1B2AA50600D0CB50 /* GoodsViewController.m */,
+				15E9F6631B2ABD8500D0CB50 /* GoodsInfoViewController.h */,
+				15E9F6641B2ABD8500D0CB50 /* GoodsInfoViewController.m */,
+			);
+			name = GoodsView;
+			sourceTree = "<group>";
+		};
+		15E9F65C1B2AAB6F00D0CB50 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				15E9F65D1B2AAB8700D0CB50 /* CategoryModel.h */,
+				15E9F65E1B2AAB8700D0CB50 /* CategoryModel.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		15F1C6361B2813AD00D9CB09 /* Categories */ = {
@@ -1923,6 +1962,7 @@
 				15F1C6D11B28306A00D9CB09 /* Message2.png in Resources */,
 				15F1C6AF1B28306500D9CB09 /* ButtonBGView.jpg in Resources */,
 				15F1C8811B29305C00D9CB09 /* 90_down1.png in Resources */,
+				15E9F6571B2AA46C00D0CB50 /* GoodsView.storyboard in Resources */,
 				15F1C86A1B29305C00D9CB09 /* 180_female1.png in Resources */,
 				15F1C74D1B28307D00D9CB09 /* 30_updown1.png in Resources */,
 				15F1C7011B28306F00D9CB09 /* 销售管理_看图王.jpg in Resources */,
@@ -2093,6 +2133,7 @@
 				15F1C7D91B28354B00D9CB09 /* ChartAxisBase.swift in Sources */,
 				15F1C7F41B28354B00D9CB09 /* ScatterChartDataSet.swift in Sources */,
 				15F1C7FF1B28354B00D9CB09 /* ChartXAxisRendererHorizontalBarChart.swift in Sources */,
+				15E9F65B1B2AA50600D0CB50 /* GoodsViewController.m in Sources */,
 				15F1C7FA1B28354B00D9CB09 /* ChartDataRendererBase.swift in Sources */,
 				15F1C8CE1B296F0A00D9CB09 /* MyDomeViewController.m in Sources */,
 				15F1C7E61B28354B00D9CB09 /* CandleChartDataEntry.swift in Sources */,
@@ -2108,6 +2149,7 @@
 				15F1C8041B28354B00D9CB09 /* CombinedChartRenderer.swift in Sources */,
 				15F1C7F11B28354B00D9CB09 /* RadarChartData.swift in Sources */,
 				15F1C80D1B28354B00D9CB09 /* ChartSelInfo.swift in Sources */,
+				15E9F65F1B2AAB8700D0CB50 /* CategoryModel.m in Sources */,
 				1583376E1B27EBFA003E673E /* qrencode.c in Sources */,
 				158337A41B27EF4D003E673E /* CNCityPickerView.m in Sources */,
 				15F1C8001B28354B00D9CB09 /* ChartXAxisRendererRadarChart.swift in Sources */,
@@ -2148,6 +2190,7 @@
 				15F1C7D21B28354B00D9CB09 /* CombinedChartView.swift in Sources */,
 				15F1C8011B28354B00D9CB09 /* ChartYAxisRenderer.swift in Sources */,
 				158334771B27E232003E673E /* main.m in Sources */,
+				15E9F6621B2AAF9800D0CB50 /* CollectionViewCell.m in Sources */,
 				15F1C6541B28256800D9CB09 /* NSArray+JSONString.m in Sources */,
 				15F1C7F51B28354B00D9CB09 /* ChartDataApproximatorFilter.swift in Sources */,
 				15F1C6421B2820D800D9CB09 /* UIView+IBAppearance.m in Sources */,
@@ -2164,6 +2207,7 @@
 				15F1C7E31B28354B00D9CB09 /* BarLineScatterCandleChartData.swift in Sources */,
 				15F1C8D11B29717A00D9CB09 /* MyDomeTableViewCell.m in Sources */,
 				15F1C7D81B28354B00D9CB09 /* ScatterChartView.swift in Sources */,
+				15E9F6651B2ABD8500D0CB50 /* GoodsInfoViewController.m in Sources */,
 				15F1C7CE1B28354B00D9CB09 /* BarChartView.swift in Sources */,
 				15F1C8D81B29837F00D9CB09 /* MyDomeProductModel.m in Sources */,
 				15F1C7EF1B28354B00D9CB09 /* PieChartData.swift in Sources */,

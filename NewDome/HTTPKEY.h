@@ -5,13 +5,13 @@
 #define GetByName @"http://app.dome123.com/Handler.ashx?Action=getbyid&data=%@"
 
 //按类别id或类别名称搜索商品
-#define GetByCategory @"http://server.dome123.com/product.ashx?aim=getbycategory&key=%@&seachtype=%@&pagesize=20&pageindex=%d&sort=%@"
+#define GetByCategory @"http://app.dome123.com/product.ashx?action=getbycategory&data=%@"
 
 //
 #define GetByCategoryID @"http://server.dome123.com/attribute.ashx?aim=getbycategoryid&cid=%@"
 
 //valueids=属性值id&categoryid=商品类别id&pagesize=每页记录数&pageindex=第几页&sort=排序字段
-#define  Getbycategoryandvalueid  @"http://server.dome123.com/product.ashx?aim=getbycategoryandvalueid&valueids=%@&categoryid=%@&pagesize=24&pageindex=%lu&sort=%@&sequence=%@&uid='%@'&isshow=%@"
+#define  Getbycategoryandvalueid  @"http://app.dome123.com/Handler.ashx?Action=getbycategoryandvalueid&data=%@"
 
 
 
@@ -113,7 +113,7 @@
 //uid  //店长ID
 //pidlist  //商品ID 多个逗号,隔开
 //isshow  // 0下架  1上架
-#define OnOffSaleAPI @"http://app.dome123.com/Handler.ashx?Action=doshow"
+#define OnOffSaleAPI @"http://app.dome123.com/Handler.ashx?Action=doshow&data=%@"
 
 
 #endif
