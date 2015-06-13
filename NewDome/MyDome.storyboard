@@ -652,6 +652,41 @@
             </objects>
             <point key="canvasLocation" x="-51" y="-1203"/>
         </scene>
+        <!--Product View Controller-->
+        <scene sceneID="qFQ-wy-U9Y">
+            <objects>
+                <viewController storyboardIdentifier="ProductViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FTT-lo-Wpx" customClass="ProductViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oWz-Wp-oEh"/>
+                        <viewControllerLayoutGuide type="bottom" id="zVn-Fv-dgb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Z9B-rb-Z9J">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ouy-fP-TLG">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ouy-fP-TLG" firstAttribute="top" secondItem="Z9B-rb-Z9J" secondAttribute="top" id="6F2-PY-E0j"/>
+                            <constraint firstItem="ouy-fP-TLG" firstAttribute="leading" secondItem="Z9B-rb-Z9J" secondAttribute="leading" id="PJy-Vl-6lP"/>
+                            <constraint firstItem="zVn-Fv-dgb" firstAttribute="top" secondItem="ouy-fP-TLG" secondAttribute="bottom" id="TUX-ts-75h"/>
+                            <constraint firstAttribute="trailing" secondItem="ouy-fP-TLG" secondAttribute="trailing" id="dGn-sx-sSs"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="a4W-7I-D9x"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="myWebView" destination="ouy-fP-TLG" id="w7S-xv-son"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6IM-TK-7Na" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1452" y="-1203"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="YsI-LY-jW4">
             <objects>
@@ -670,6 +705,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YPe-LD-kNF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-431" y="-1203"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4J5-H8-bh8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qa7-o5-CJT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ykj-65-qJj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FTT-lo-Wpx" kind="relationship" relationship="rootViewController" id="7ku-QC-LeP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0BO-NT-WwG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="640" y="-1203"/>
         </scene>
     </scenes>
     <resources>

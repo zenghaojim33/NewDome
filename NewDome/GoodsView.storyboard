@@ -580,7 +580,6 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="beginOffsale:" destination="S8O-th-bCH" eventType="touchUpInside" id="i7h-g2-1Ox"/>
                                     <action selector="beginOnSale:" destination="S8O-th-bCH" eventType="touchUpInside" id="bou-Xi-fDE"/>
                                 </connections>
                             </button>
@@ -631,6 +630,60 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fSI-aD-8KT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1360" y="-1848"/>
+        </scene>
+        <!--Product View Controller-->
+        <scene sceneID="sS4-VX-PuT">
+            <objects>
+                <viewController storyboardIdentifier="ProductViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dJv-Tt-thH" customClass="ProductViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="u5a-bh-asC"/>
+                        <viewControllerLayoutGuide type="bottom" id="knO-Wv-fO8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Vax-pT-ycm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dhl-Hf-ooF">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="dhl-Hf-ooF" secondAttribute="trailing" id="YpW-Ct-rmv"/>
+                            <constraint firstItem="dhl-Hf-ooF" firstAttribute="leading" secondItem="Vax-pT-ycm" secondAttribute="leading" id="bzD-3P-sgP"/>
+                            <constraint firstItem="dhl-Hf-ooF" firstAttribute="top" secondItem="Vax-pT-ycm" secondAttribute="top" id="eIP-HR-Gf0"/>
+                            <constraint firstItem="knO-Wv-fO8" firstAttribute="top" secondItem="dhl-Hf-ooF" secondAttribute="bottom" id="oBE-fR-Pf9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="dkv-a7-y9A"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="myWebView" destination="dhl-Hf-ooF" id="jtc-Ut-eva"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b4A-5v-roA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1429" y="-1156"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="aGY-ef-yAd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="n3f-57-6S3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gUH-3u-76O">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dJv-Tt-thH" kind="relationship" relationship="rootViewController" id="0Wx-Zz-Tmt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jsA-UC-VmT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="946" y="-1146"/>
         </scene>
     </scenes>
     <resources>

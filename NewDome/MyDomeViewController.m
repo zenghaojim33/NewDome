@@ -14,6 +14,7 @@
 #import "UMSocialWechatHandler.h"
 #import "UMSocial.h"
 #import "WXApi.h"
+#import "ProductViewController.h"
 @interface MyDomeViewController ()<UITableViewDataSource,UITableViewDelegate,MyDomeTableViewCellDelegate,UMSocialUIDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *myDomeTableView;
 @property (weak, nonatomic) IBOutlet UIButton *confirmButton;
@@ -65,7 +66,7 @@
     
     //
     
-    
+    [self.myDomeTableView addLegendFooterWithRefreshingTarget:self refreshingAction:@selector(footerRefresh)];
     
     
     [self getData];
@@ -111,10 +112,12 @@
             
         }
         
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.myDomeTableView reloadData];
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
-        });
+        [self.myDomeTableView reloadData];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        [self.myDomeTableView.footer endRefreshing];
+        if (response.count == 0){
+            [self.myDomeTableView.footer noticeNoMoreData];
+        }
         
     }];
     
@@ -146,8 +149,20 @@
     return _productModelArray.count;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    MyDomeProductModel * model = _productModelArray[indexPath.row];
+    ProductViewController * vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ProductViewController"];
+    
+    vc.model = model;
+    [self.navigationController pushViewController:vc animated:YES];
+    
+}
 
 
+
+#pragma mark ----UMSocial
 -(void)TouchCopyForTag:(long)tag{
     
     
@@ -199,10 +214,6 @@
         //如果得到分享完成回调，需要设置delegate为self
         [UMSocialSnsService presentSnsIconSheetView:self appKey:@"54a350bffd98c51f0900012d" shareText:shareText shareImage:shareImage shareToSnsNames:@[UMShareToWechatSession,UMShareToWechatTimeline] delegate:self];
         
-    }else{
-        UIAlertView * av = [[UIAlertView alloc]initWithTitle:@"你的设备尚未安装微信" message:@"暂时无法使用分享功能" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"前往下载", nil];
-        av.tag = 999;
-        [av show];
     }
     
     
@@ -225,6 +236,47 @@
     [self.myDomeTableView reloadData];
 }
 
+#pragma mark 点击店铺复制
+- (IBAction)TouchCopyButton:(UIButton*)button
+{
+    NSString * link = [NSString stringWithFormat:CopyShop,_userInfo.shopid];
+    
+    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+    
+    pasteboard.string = link;
+    
+    UIAlertView * alert = [UIAlertView bk_alertViewWithTitle:@"复制成功"];
+    [alert addButtonWithTitle:@"确认"];
+    [alert show];
+}
+
+- (IBAction)TouchShareButton:(UIButton*)button
+{
+    //微信网页类型
+    
+    BOOL isInstalledWeixin = [WXApi isWXAppInstalled];
+    
+    if (isInstalledWeixin){
+        
+        [UMSocialData defaultData].extConfig.wxMessageType = UMSocialWXMessageTypeWeb;
+        NSString *shareText = @"我的都美";             //分享内嵌文字
+        UIImage *shareImage =[UIImage imageNamed:@"dome123.png"];  //分享内嵌图片
+        
+        
+        NSString * link = [NSString stringWithFormat:CopyShop,_userInfo.shopid];
+        NSLog(@"link:%@",link);
+        [UMSocialData defaultData].extConfig.wechatSessionData.url = link;
+        [UMSocialData defaultData].extConfig.wechatTimelineData.url = link;
+        
+        //如果得到分享完成回调，需要设置delegate为self
+        [UMSocialSnsService presentSnsIconSheetView:self appKey:@"54a350bffd98c51f0900012d" shareText:shareText shareImage:shareImage shareToSnsNames:@[UMShareToWechatSession,UMShareToWechatTimeline] delegate:self];
+        
+    }else{
+        UIAlertView * av = [[UIAlertView alloc]initWithTitle:@"你的设备尚未安装微信" message:@"暂时无法使用分享功能" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"前往下载", nil];
+        av.tag = 999;
+        [av show];
+    }
+}
 
 
 - (IBAction)beginOffsale:(id)sender {
@@ -268,7 +320,7 @@
                 
                 
             }
-            
+            //批量删除操作需要记录所有选中的cell的indexPath
             NSMutableIndexSet * indexPathNumbers = [[NSMutableIndexSet alloc]init];
             
             for (NSIndexPath * indexPath in selectedIndexPathes)
@@ -280,7 +332,7 @@
             [self.myDomeTableView deleteRowsAtIndexPaths:selectedIndexPathes withRowAnimation:UITableViewRowAnimationFade];
             [self.myDomeTableView endUpdates];
             [_selectedModelArray removeAllObjects];
-            
+            [self.myDomeTableView reloadData];
             [MBProgressHUD hideHUDForView:self.view animated:YES];
 
             
@@ -291,6 +343,11 @@
     
 
     
+}
+#pragma mark ---- MJRefresh
+-(void)footerRefresh{
+    _page ++;
+    [self getData];
 }
 
 @end

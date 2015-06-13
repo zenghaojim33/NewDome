@@ -14,7 +14,7 @@
 //#import "OrderManagementViewController.h"
 //#import "OrderViewController.h"
 //#import "RushOrdersViewController.h"
-//#import "MyIncomeViewController.h"
+#import "MyIncomeViewController.h"
 //#import "CustomerViewController.h"
 #import "SpreadDomeViewController.h"
 #import "SettingViewController.h"
@@ -158,12 +158,12 @@
 //    RushOrdersViewController * vc = [self.storyboard instantiateViewControllerWithIdentifier:@"RushOrdersViewController"];
 //    [self.navigationController pushViewController:vc animated:YES];
 //}
-//#pragma mark 我的财富
-//- (IBAction)TouchIncome:(UIButton *)button
-//{
-//    MyIncomeViewController * vc = [self.storyboard instantiateViewControllerWithIdentifier:@"MyIncomeViewController"];
-//    [self.navigationController pushViewController:vc animated:YES];
-//}
+#pragma mark 我的财富
+- (IBAction)TouchIncome:(UIButton *)button
+{
+    MyIncomeViewController * vc = [[UIStoryboard storyboardWithName:@"MyIncome" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"MyIncomeViewController"];;
+    [self.navigationController pushViewController:vc animated:YES];
+}
 //#pragma mark 客户管理
 //- (IBAction)TouchCustomer:(UIButton *)button
 //{

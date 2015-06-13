@@ -425,7 +425,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tEm-0i-jSY">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tEm-0i-jSY">
                                 <rect key="frame" x="16" y="72" width="343" height="255"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="BGView.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="3C2-1B-K1M">
@@ -654,8 +654,8 @@
                                     <mask key="constraints">
                                         <exclude reference="nM7-dj-Vd0"/>
                                         <exclude reference="MAl-FT-3ij"/>
-                                        <exclude reference="XHl-sp-JmD"/>
                                         <exclude reference="WNW-tS-ERq"/>
+                                        <exclude reference="XHl-sp-JmD"/>
                                     </mask>
                                 </variation>
                             </view>

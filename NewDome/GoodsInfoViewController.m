@@ -13,6 +13,7 @@
 #import "UMSocialWechatHandler.h"
 #import "UMSocial.h"
 #import "WXApi.h"
+#import "ProductViewController.h"
 @interface GoodsInfoViewController ()<UITableViewDataSource,UITableViewDelegate,MyDomeTableViewCellDelegate,UMSocialUIDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *confirmButton;
 @property (weak, nonatomic) IBOutlet UITableView *myDomeTableView;
@@ -61,7 +62,7 @@
     
     //
     
-    
+    [self.myDomeTableView addLegendFooterWithRefreshingTarget:self refreshingAction:@selector(footerRefresh)];
     
     
     [self getData];
@@ -104,27 +105,18 @@
             [_productModelArray addObject:model];
             
         }
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.myDomeTableView reloadData];
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
-        });
-
+        [self.myDomeTableView reloadData];
+        [MBProgressHUD hideHUDForView:self.view animated:YES];
+        [self.myDomeTableView.footer endRefreshing];
+        if (response.count == 0){
+            [self.myDomeTableView.footer noticeNoMoreData];
+        }
         
     }];
 }
 
 
-
-
-#pragma mark ---- Private Methods
-- (IBAction)beginOnSale:(id)sender {
-    
-    
-    
-    
-    
-}
-
+#pragma mark UITableView Delegate
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -144,6 +136,32 @@
     
     
     return _productModelArray.count;
+}
+
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    MyDomeProductModel * model = _productModelArray[indexPath.row];
+    ProductViewController * vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ProductViewController"];
+    vc.model = model;
+    [self.navigationController pushViewController:vc animated:YES];
+    
+    
+}
+
+
+#pragma mark  ---UMSocial
+
+- (void)TouchCopyForTag:(long)tag
+{
+    MyDomeProductModel * model = _productModelArray[tag];
+    NSString * link = [NSString stringWithFormat:@"http://weixin.dome123.com/AllBeauty/ProudtDetail.html?productID=%@&id=%@",model.productId,_userInfo.userID];
+    
+    UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+    
+    pasteboard.string = link;
+    
 }
 
 -(void)TouchShareForTag:(long)tag{
@@ -185,27 +203,10 @@
     
     
 }
-
-
-
--(void)TouchDownForTag:(long)tag{
+#pragma mark ---- Private Methods
+- (IBAction)beginOnSale:(id)sender {
     
     
-    MyDomeProductModel * model = _productModelArray[tag];
-    
-    model.isSelected = !model.isSelected;
-    
-    [_selectedModelArray containsObject:model] ? [_selectedModelArray removeObject:model] : [_selectedModelArray addObject: model];
-    
-    
-    _selectedModelArray.count == 0 ? [self.confirmButton setTitle:@"上架" forState:UIControlStateNormal] : [self.confirmButton setTitle:[NSString stringWithFormat:@"上架(%lu)",_selectedModelArray.count] forState:UIControlStateNormal];
-    
-    [self.myDomeTableView reloadData];
-}
-
-
-
-- (IBAction)beginOffsale:(id)sender {
     
     if (_selectedModelArray.count == 0){
         
@@ -253,8 +254,52 @@
         
         
     }
+
     
     
+}
+
+
+-(void)TouchDownForTag:(long)tag{
+    
+    
+    MyDomeProductModel * model = _productModelArray[tag];
+    
+    model.isSelected = !model.isSelected;
+    
+    [_selectedModelArray containsObject:model] ? [_selectedModelArray removeObject:model] : [_selectedModelArray addObject: model];
+    
+    
+    _selectedModelArray.count == 0 ? [self.confirmButton setTitle:@"上架" forState:UIControlStateNormal] : [self.confirmButton setTitle:[NSString stringWithFormat:@"上架(%lu)",_selectedModelArray.count] forState:UIControlStateNormal];
+    
+    [self.myDomeTableView reloadData];
+}
+
+
+
+
+
+
+-(void)didFinishGetUMSocialDataInViewController:(UMSocialResponseEntity *)response
+{
+    //根据`responseCode`得到发送结果,如果分享成功
+    if(response.responseCode == UMSResponseCodeSuccess)
+    {
+        //得到分享到的微博平台名
+        NSLog(@"share to sns name is %@",[[response.data allKeys] objectAtIndex:0]);
+        
+        UIAlertView * av = [[UIAlertView alloc]initWithTitle:@"分享成功" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        
+        [av show];
+        
+        //Because November is luck month
+    }
+}
+
+
+-(void)footerRefresh{
+    _page++;
+    [self getData];
     
 }
 

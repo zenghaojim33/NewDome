@@ -53,6 +53,15 @@
 		15E9F6781B2AE0DC00D0CB50 /* RegExpValidate.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E9F6751B2AE0DC00D0CB50 /* RegExpValidate.m */; };
 		15E9F6791B2AE0DC00D0CB50 /* RegExpValidateFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E9F6771B2AE0DC00D0CB50 /* RegExpValidateFormat.m */; };
 		15E9F67C1B2AE36600D0CB50 /* UICountingLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E9F67B1B2AE36600D0CB50 /* UICountingLabel.m */; };
+		15E9F6801B2BD2F300D0CB50 /* MyIncomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E9F67F1B2BD2F300D0CB50 /* MyIncomeViewController.m */; };
+		15E9F6821B2BD30600D0CB50 /* MyIncome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15E9F6811B2BD30600D0CB50 /* MyIncome.storyboard */; };
+		15E9F6861B2BD72E00D0CB50 /* MyIncomeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E9F6851B2BD72E00D0CB50 /* MyIncomeModel.m */; };
+		15E9F6891B2C0CD700D0CB50 /* WithdrawTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E9F6881B2C0CD700D0CB50 /* WithdrawTableViewController.m */; };
+		15E9F6911B2C109700D0CB50 /* BWMLineChartCaptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E9F68C1B2C109700D0CB50 /* BWMLineChartCaptionView.m */; };
+		15E9F6921B2C109700D0CB50 /* BWMLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E9F68E1B2C109700D0CB50 /* BWMLineChartView.m */; };
+		15E9F6931B2C109700D0CB50 /* BWMLineChartViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E9F6901B2C109700D0CB50 /* BWMLineChartViewFactory.m */; };
+		15E9F6951B2C115400D0CB50 /* Order.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15E9F6941B2C115400D0CB50 /* Order.storyboard */; };
+		15E9F6981B2C135B00D0CB50 /* ProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15E9F6971B2C135B00D0CB50 /* ProductViewController.m */; };
 		15F1C63A1B28182800D9CB09 /* 1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 15F1C6391B28182800D9CB09 /* 1024.png */; };
 		15F1C6411B2820D800D9CB09 /* UIImageView+FadeInEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F1C63C1B2820D800D9CB09 /* UIImageView+FadeInEffect.m */; };
 		15F1C6421B2820D800D9CB09 /* UIView+IBAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 15F1C63E1B2820D800D9CB09 /* UIView+IBAppearance.m */; };
@@ -775,6 +784,22 @@
 		15E9F6771B2AE0DC00D0CB50 /* RegExpValidateFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegExpValidateFormat.m; sourceTree = "<group>"; };
 		15E9F67A1B2AE36600D0CB50 /* UICountingLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICountingLabel.h; sourceTree = "<group>"; };
 		15E9F67B1B2AE36600D0CB50 /* UICountingLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICountingLabel.m; sourceTree = "<group>"; };
+		15E9F67E1B2BD2F300D0CB50 /* MyIncomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyIncomeViewController.h; sourceTree = "<group>"; };
+		15E9F67F1B2BD2F300D0CB50 /* MyIncomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyIncomeViewController.m; sourceTree = "<group>"; };
+		15E9F6811B2BD30600D0CB50 /* MyIncome.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyIncome.storyboard; sourceTree = "<group>"; };
+		15E9F6841B2BD72E00D0CB50 /* MyIncomeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyIncomeModel.h; sourceTree = "<group>"; };
+		15E9F6851B2BD72E00D0CB50 /* MyIncomeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyIncomeModel.m; sourceTree = "<group>"; };
+		15E9F6871B2C0CD700D0CB50 /* WithdrawTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WithdrawTableViewController.h; sourceTree = "<group>"; };
+		15E9F6881B2C0CD700D0CB50 /* WithdrawTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WithdrawTableViewController.m; sourceTree = "<group>"; };
+		15E9F68B1B2C109700D0CB50 /* BWMLineChartCaptionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWMLineChartCaptionView.h; sourceTree = "<group>"; };
+		15E9F68C1B2C109700D0CB50 /* BWMLineChartCaptionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWMLineChartCaptionView.m; sourceTree = "<group>"; };
+		15E9F68D1B2C109700D0CB50 /* BWMLineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWMLineChartView.h; sourceTree = "<group>"; };
+		15E9F68E1B2C109700D0CB50 /* BWMLineChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWMLineChartView.m; sourceTree = "<group>"; };
+		15E9F68F1B2C109700D0CB50 /* BWMLineChartViewFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWMLineChartViewFactory.h; sourceTree = "<group>"; };
+		15E9F6901B2C109700D0CB50 /* BWMLineChartViewFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWMLineChartViewFactory.m; sourceTree = "<group>"; };
+		15E9F6941B2C115400D0CB50 /* Order.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Order.storyboard; sourceTree = "<group>"; };
+		15E9F6961B2C135B00D0CB50 /* ProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductViewController.h; sourceTree = "<group>"; };
+		15E9F6971B2C135B00D0CB50 /* ProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductViewController.m; sourceTree = "<group>"; };
 		15F1C6381B28176200D9CB09 /* HTTPKEY.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPKEY.h; sourceTree = "<group>"; };
 		15F1C6391B28182800D9CB09 /* 1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1024.png; sourceTree = "<group>"; };
 		15F1C63B1B2820D800D9CB09 /* UIImageView+FadeInEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+FadeInEffect.h"; sourceTree = "<group>"; };
@@ -956,6 +981,8 @@
 		158334731B27E232003E673E /* NewDome */ = {
 			isa = PBXGroup;
 			children = (
+				15E9F6991B2C136B00D0CB50 /* ProductView */,
+				15E9F67D1B2BD2DA00D0CB50 /* MyIncome */,
 				15E9F6581B2AA4AF00D0CB50 /* GoodsView */,
 				15F1C8CB1B296EF900D9CB09 /* MyDomeView */,
 				15F1C8181B291AF900D9CB09 /* Setting */,
@@ -1360,6 +1387,8 @@
 				15F1C8C11B293EA400D9CB09 /* HomeView.storyboard */,
 				15F1C8C91B296B4900D9CB09 /* MyDome.storyboard */,
 				15E9F6561B2AA46C00D0CB50 /* GoodsView.storyboard */,
+				15E9F6811B2BD30600D0CB50 /* MyIncome.storyboard */,
+				15E9F6941B2C115400D0CB50 /* Order.storyboard */,
 			);
 			name = "XIBs & Storyboards";
 			sourceTree = "<group>";
@@ -1367,6 +1396,7 @@
 		158336DB1B27EBCF003E673E /* Third Parties */ = {
 			isa = PBXGroup;
 			children = (
+				15E9F68A1B2C106100D0CB50 /* LineChartView */,
 				15F1C77E1B28354A00D9CB09 /* Charts */,
 				158337951B27EF4D003E673E /* CNCityPickerView */,
 				158336FD1B27EBFA003E673E /* libqrencode */,
@@ -1456,6 +1486,49 @@
 				15E9F66F1B2AE07200D0CB50 /* BWMBankCoder.m */,
 			);
 			name = Tools;
+			sourceTree = "<group>";
+		};
+		15E9F67D1B2BD2DA00D0CB50 /* MyIncome */ = {
+			isa = PBXGroup;
+			children = (
+				15E9F6831B2BD4D800D0CB50 /* Model */,
+				15E9F67E1B2BD2F300D0CB50 /* MyIncomeViewController.h */,
+				15E9F67F1B2BD2F300D0CB50 /* MyIncomeViewController.m */,
+				15E9F6871B2C0CD700D0CB50 /* WithdrawTableViewController.h */,
+				15E9F6881B2C0CD700D0CB50 /* WithdrawTableViewController.m */,
+			);
+			name = MyIncome;
+			sourceTree = "<group>";
+		};
+		15E9F6831B2BD4D800D0CB50 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				15E9F6841B2BD72E00D0CB50 /* MyIncomeModel.h */,
+				15E9F6851B2BD72E00D0CB50 /* MyIncomeModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		15E9F68A1B2C106100D0CB50 /* LineChartView */ = {
+			isa = PBXGroup;
+			children = (
+				15E9F68B1B2C109700D0CB50 /* BWMLineChartCaptionView.h */,
+				15E9F68C1B2C109700D0CB50 /* BWMLineChartCaptionView.m */,
+				15E9F68D1B2C109700D0CB50 /* BWMLineChartView.h */,
+				15E9F68E1B2C109700D0CB50 /* BWMLineChartView.m */,
+				15E9F68F1B2C109700D0CB50 /* BWMLineChartViewFactory.h */,
+				15E9F6901B2C109700D0CB50 /* BWMLineChartViewFactory.m */,
+			);
+			name = LineChartView;
+			sourceTree = "<group>";
+		};
+		15E9F6991B2C136B00D0CB50 /* ProductView */ = {
+			isa = PBXGroup;
+			children = (
+				15E9F6961B2C135B00D0CB50 /* ProductViewController.h */,
+				15E9F6971B2C135B00D0CB50 /* ProductViewController.m */,
+			);
+			name = ProductView;
 			sourceTree = "<group>";
 		};
 		15F1C6361B2813AD00D9CB09 /* Categories */ = {
@@ -2010,6 +2083,7 @@
 				15F1C7011B28306F00D9CB09 /* 销售管理_看图王.jpg in Resources */,
 				15F1C6D51B28306A00D9CB09 /* TableButton3.png in Resources */,
 				15F1C6EC1B28306F00D9CB09 /* 收入详情_看图王.jpg in Resources */,
+				15E9F6821B2BD30600D0CB50 /* MyIncome.storyboard in Resources */,
 				15F1C7041B28307700D9CB09 /* 100_buy1.png in Resources */,
 				15F1C7161B28307700D9CB09 /* 50_dorpdown1.png in Resources */,
 				15F1C8A01B2933C600D9CB09 /* SpreadDome.storyboard in Resources */,
@@ -2038,6 +2112,7 @@
 				15F1C6C61B28306500D9CB09 /* 搜索.png in Resources */,
 				15F1C6ED1B28306F00D9CB09 /* 注册页 (2)_看图王.jpg in Resources */,
 				15F1C6E71B28306F00D9CB09 /* 找回密码0_看图王.jpg in Resources */,
+				15E9F6951B2C115400D0CB50 /* Order.storyboard in Resources */,
 				15F1C6D01B28306A00D9CB09 /* imageButton.png in Resources */,
 				15F1C6C91B28306500D9CB09 /* 测试头像.png in Resources */,
 				15F1C7361B28307D00D9CB09 /* 25_edit1@2x.png in Resources */,
@@ -2153,8 +2228,10 @@
 				15F1C80F1B28354B00D9CB09 /* ChartTransformerHorizontalBarChart.swift in Sources */,
 				15F1C7F61B28354B00D9CB09 /* ChartDataBaseFilter.swift in Sources */,
 				15F1C8091B28354B00D9CB09 /* ScatterChartRenderer.swift in Sources */,
+				15E9F6891B2C0CD700D0CB50 /* WithdrawTableViewController.m in Sources */,
 				15F1C64D1B28237E00D9CB09 /* HTTPRequestManager.m in Sources */,
 				15F1C7FB1B28354B00D9CB09 /* ChartLegendRenderer.swift in Sources */,
+				15E9F6911B2C109700D0CB50 /* BWMLineChartCaptionView.m in Sources */,
 				15F1C80C1B28354B00D9CB09 /* ChartHighlight.swift in Sources */,
 				15F1C7E11B28354B00D9CB09 /* BarChartDataEntry.swift in Sources */,
 				15F1C7E71B28354B00D9CB09 /* CandleChartDataSet.swift in Sources */,
@@ -2180,12 +2257,15 @@
 				15F1C7FA1B28354B00D9CB09 /* ChartDataRendererBase.swift in Sources */,
 				15F1C8CE1B296F0A00D9CB09 /* MyDomeViewController.m in Sources */,
 				15F1C7E61B28354B00D9CB09 /* CandleChartDataEntry.swift in Sources */,
+				15E9F6921B2C109700D0CB50 /* BWMLineChartView.m in Sources */,
+				15E9F6931B2C109700D0CB50 /* BWMLineChartViewFactory.m in Sources */,
 				15F1C80B1B28354B00D9CB09 /* ChartFillFormatter.swift in Sources */,
 				15F1C7F91B28354B00D9CB09 /* ChartAxisRendererBase.swift in Sources */,
 				1583376F1B27EBFA003E673E /* qrinput.c in Sources */,
 				15F1C7DB1B28354B00D9CB09 /* ChartLegend.swift in Sources */,
 				15F1C7F21B28354B00D9CB09 /* RadarChartDataSet.swift in Sources */,
 				15F1C7FE1B28354B00D9CB09 /* ChartXAxisRendererBarChart.swift in Sources */,
+				15E9F6981B2C135B00D0CB50 /* ProductViewController.m in Sources */,
 				15F1C7DA1B28354B00D9CB09 /* ChartComponentBase.swift in Sources */,
 				15F1C8C01B293DBA00D9CB09 /* HomeViewController.m in Sources */,
 				15F1C7D61B28354B00D9CB09 /* PieRadarChartViewBase.swift in Sources */,
@@ -2224,6 +2304,7 @@
 				15F1C7DC1B28354B00D9CB09 /* ChartLimitLine.swift in Sources */,
 				15F1C7ED1B28354B00D9CB09 /* LineChartDataSet.swift in Sources */,
 				158337711B27EBFA003E673E /* rscode.c in Sources */,
+				15E9F6861B2BD72E00D0CB50 /* MyIncomeModel.m in Sources */,
 				15F1C7D01B28354B00D9CB09 /* CandleStickChartView.swift in Sources */,
 				15E9F67C1B2AE36600D0CB50 /* UICountingLabel.m in Sources */,
 				15F1C7EC1B28354B00D9CB09 /* LineChartData.swift in Sources */,
@@ -2255,6 +2336,7 @@
 				15F1C8D11B29717A00D9CB09 /* MyDomeTableViewCell.m in Sources */,
 				15F1C7D81B28354B00D9CB09 /* ScatterChartView.swift in Sources */,
 				15E9F6651B2ABD8500D0CB50 /* GoodsInfoViewController.m in Sources */,
+				15E9F6801B2BD2F300D0CB50 /* MyIncomeViewController.m in Sources */,
 				15F1C7CE1B28354B00D9CB09 /* BarChartView.swift in Sources */,
 				15F1C8D81B29837F00D9CB09 /* MyDomeProductModel.m in Sources */,
 				15F1C7EF1B28354B00D9CB09 /* PieChartData.swift in Sources */,
