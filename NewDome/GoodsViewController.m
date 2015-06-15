@@ -48,7 +48,6 @@
     [super viewDidLoad];
     indexrow = 0;
     self.subclassTableView.tableFooterView = self.subclassTableView.tableHeaderView = [[UIView alloc]init];
-    self.title = @"服装";
     [self getCategoryData];
 }
 

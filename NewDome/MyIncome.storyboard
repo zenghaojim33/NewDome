@@ -207,8 +207,7 @@
                                                 </mask>
                                             </variation>
                                             <connections>
-                                                <action selector="TouchButton:" destination="RWP-ef-NDT" eventType="touchUpInside" id="zhA-cu-bjK"/>
-                                                <segue destination="y8Q-bO-pAZ" kind="push" id="CBf-Yg-KJY"/>
+                                                <action selector="enterMyAccount:" destination="RWP-ef-NDT" eventType="touchUpInside" id="l3j-F1-jPu"/>
                                             </connections>
                                         </button>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P26-ZC-MTC">
@@ -266,7 +265,7 @@
                                                 </mask>
                                             </variation>
                                             <connections>
-                                                <action selector="TouchWithdrawal:" destination="RWP-ef-NDT" eventType="touchUpInside" id="qx8-Cx-DCp"/>
+                                                <segue destination="y8Q-bO-pAZ" kind="push" identifier="pushToWithDraw" id="3Uo-Oz-ajd"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -344,7 +343,7 @@
         <scene sceneID="orO-Er-Gpm">
             <objects>
                 <tableViewController storyboardIdentifier="WithdrawTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="y8Q-bO-pAZ" customClass="WithdrawTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="spq-y3-lKT">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="spq-y3-lKT" customClass="TPKeyboardAvoidingTableView">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -543,6 +542,7 @@
                         <outlet property="WithdrawTableView" destination="spq-y3-lKT" id="3Lh-Jg-w25"/>
                         <outlet property="bankAccount" destination="QVd-Jc-05J" id="hKc-rZ-kzt"/>
                         <outlet property="bankName" destination="lrw-xz-Fq6" id="1vd-Ux-lpH"/>
+                        <outlet property="moneyTextField" destination="yPF-WJ-aL5" id="AeZ-dY-OL1"/>
                         <outlet property="passwordTextField" destination="aDZ-Be-4k3" id="Qct-uf-ng2"/>
                         <outlet property="userName" destination="yUN-a9-Dpy" id="esQ-a3-mz2"/>
                     </connections>

@@ -7,12 +7,14 @@
 //
 
 #import "WithdrawTableViewController.h"
+#import "RegExpValidateFormat.h"
 @interface WithdrawTableViewController ()
 @property (strong, nonatomic) IBOutlet UITableView *WithdrawTableView;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
 @property (weak, nonatomic) IBOutlet UILabel *bankName;
 @property (weak, nonatomic) IBOutlet UILabel *bankAccount;
 @property (weak, nonatomic) IBOutlet UILabel *userName;
+@property (weak, nonatomic) IBOutlet UITextField *moneyTextField;
 
 @end
 
@@ -34,10 +36,11 @@
     self.title = @"提现到银行卡";
     
     _userInfo = [UserInfoModel shareUserInfo];
-    self.bankName.text = _userInfo.userID;
+    self.bankName.text = _userInfo.bank;
     self.bankAccount.text = _userInfo.bankno;
     self.userName.text = _userInfo.acountname;
     
+    [RegExpValidateFormat formatToPriceStringWithTextField:self.moneyTextField];
     
     
 }

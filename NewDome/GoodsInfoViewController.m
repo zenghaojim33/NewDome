@@ -208,6 +208,30 @@
     
     
     
+    
+    
+}
+
+
+-(void)TouchDownForTag:(long)tag{
+    
+    
+    MyDomeProductModel * model = _productModelArray[tag];
+    
+    model.isSelected = !model.isSelected;
+    
+    [_selectedModelArray containsObject:model] ? [_selectedModelArray removeObject:model] : [_selectedModelArray addObject: model];
+    
+    
+    _selectedModelArray.count == 0 ? [self.confirmButton setTitle:@"上架" forState:UIControlStateNormal] : [self.confirmButton setTitle:[NSString stringWithFormat:@"上架(%lu)",_selectedModelArray.count] forState:UIControlStateNormal];
+    
+    [self.myDomeTableView reloadData];
+}
+
+
+
+- (IBAction)beginOffsale:(id)sender {
+    
     if (_selectedModelArray.count == 0){
         
         [UIAlertView bk_alertViewWithTitle:@"请至少选择一件商品"];
@@ -255,28 +279,7 @@
         
     }
 
-    
-    
 }
-
-
--(void)TouchDownForTag:(long)tag{
-    
-    
-    MyDomeProductModel * model = _productModelArray[tag];
-    
-    model.isSelected = !model.isSelected;
-    
-    [_selectedModelArray containsObject:model] ? [_selectedModelArray removeObject:model] : [_selectedModelArray addObject: model];
-    
-    
-    _selectedModelArray.count == 0 ? [self.confirmButton setTitle:@"上架" forState:UIControlStateNormal] : [self.confirmButton setTitle:[NSString stringWithFormat:@"上架(%lu)",_selectedModelArray.count] forState:UIControlStateNormal];
-    
-    [self.myDomeTableView reloadData];
-}
-
-
-
 
 
 

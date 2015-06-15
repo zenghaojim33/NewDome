@@ -9,6 +9,7 @@
 #import "MyIncomeViewController.h"
 #import "MyIncomeModel.h"
 #import "UICountingLabel.h"
+#import "ChangeInfoViewController.h"
 @interface MyIncomeViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *myIncomeTableView;
 @property (weak, nonatomic) IBOutlet UICountingLabel *incomeOfOwnLabel;
@@ -71,7 +72,7 @@
         
         [self updateIncomeData];
         [MBProgressHUD hideHUDForView:self.view animated:YES];
-            
+        
         
         
     }];
@@ -134,6 +135,25 @@
 }
 
 
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+    if ([segue.identifier isEqualToString:@"pushToWithDraw"]){
+        
+        
+    }
+    
+    
+    
+}
+- (IBAction)enterMyAccount:(id)sender {
+    
+    ChangeInfoViewController * vc =[[UIStoryboard storyboardWithName:@"Setting&QRCode" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"ChangeInfoViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
+    
+    
+}
 
 
 /*

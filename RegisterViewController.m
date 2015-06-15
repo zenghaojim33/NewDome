@@ -7,6 +7,7 @@
 //
 
 #import "RegisterViewController.h"
+#import "RegExpValidate.h"
 //发送短信验证码接口
 #define sendSmsCode @"http://www.beautyway.cn/json/index.aspx?aim=sendmsg&number=%@&desc=欢迎使用都美,您的验证码是"
 
@@ -68,12 +69,12 @@
     
     NSString * phone = self.phoneNumberTF.text;
 
-    BOOL isMobile =  [self isMobileNumber:phone];
+    BOOL isMobile =  [RegExpValidate validateMoney:phone];
     
     if (isMobile==NO)
     {
        
-        [self showAlertViewForTitle:nil AndMessage:@"手机号码不正确"];
+        [self showAlertViewForTitle:nil AndMessage:@"请输入正确的手机号码"];
         
     }else{
         //  发送验证码短信：

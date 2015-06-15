@@ -15,6 +15,8 @@
 #import "UMSocial.h"
 #import "WXApi.h"
 #import "ProductViewController.h"
+#import "ChangeInfoViewController.h"
+#import "GoodsViewController.h"
 @interface MyDomeViewController ()<UITableViewDataSource,UITableViewDelegate,MyDomeTableViewCellDelegate,UMSocialUIDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *myDomeTableView;
 @property (weak, nonatomic) IBOutlet UIButton *confirmButton;
@@ -136,7 +138,7 @@
     cell.tag = indexPath.row;
     cell.delegate = self;
     [cell updateCellWithModel:_productModelArray[indexPath.row] withIndexPath:indexPath];
-    
+    cell.isMyDome = YES;
     
     return cell;
 }
@@ -234,6 +236,40 @@
     _selectedModelArray.count == 0 ? [self.confirmButton setTitle:@"下架" forState:UIControlStateNormal] : [self.confirmButton setTitle:[NSString stringWithFormat:@"下架(%lu)",_selectedModelArray.count] forState:UIControlStateNormal];
     
     [self.myDomeTableView reloadData];
+}
+
+- (IBAction)TouchCategory:(UIButton *)sender
+{
+    NSString * title;
+    switch (sender.tag)
+    {
+        case 0:
+            title = @"服装";
+            break;
+        case 1:
+            title = @"美妆";
+            break;
+        case 2:
+            title = @"包袋";
+            break;
+        case 3:
+            title = @"配饰";
+            break;
+        default:
+            title = @"鞋履";
+            break;
+    }
+    
+    GoodsViewController * vc = [[UIStoryboard storyboardWithName:@"GoodsView" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"GoodsViewController"];
+    vc.title = title;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+
+- (IBAction)TouchEditorButton:(UIButton*)button
+{
+    ChangeInfoViewController * vc =[[UIStoryboard storyboardWithName:@"Setting&QRCode" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"ChangeInfoViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark 点击店铺复制

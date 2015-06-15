@@ -489,7 +489,7 @@
                                                                 <constraint firstAttribute="height" constant="34" id="2TY-G0-VjM"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                            <state key="normal" title="上架" image="25_cannel1.png" backgroundImage="CellBGView2.png">
+                                                            <state key="normal" title="上架" image="25_add.png" backgroundImage="CellBGView2.png">
                                                                 <color key="titleColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
@@ -687,7 +687,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="25_cannel1.png" width="15" height="15"/>
+        <image name="25_add.png" width="16" height="16"/>
         <image name="30_link1.png" width="15" height="15"/>
         <image name="30_share1.png" width="15" height="15"/>
         <image name="CellBGView.jpg" width="640" height="75"/>

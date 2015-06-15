@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <scenes>
+        <!--Rush Orders View Controller-->
+        <scene sceneID="FAw-jh-YkR">
+            <objects>
+                <viewController storyboardIdentifier="RushOrdersViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Txg-O7-h7v" customClass="RushOrdersViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="m5e-aN-jc5"/>
+                        <viewControllerLayoutGuide type="bottom" id="dx7-yL-FVA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ND1-Zx-MNz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="DZC-lf-uM2">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="DZC-lf-uM2" firstAttribute="leading" secondItem="ND1-Zx-MNz" secondAttribute="leading" id="3Dt-yb-8qh"/>
+                            <constraint firstItem="DZC-lf-uM2" firstAttribute="top" secondItem="ND1-Zx-MNz" secondAttribute="top" id="4fB-4o-crG"/>
+                            <constraint firstItem="dx7-yL-FVA" firstAttribute="top" secondItem="DZC-lf-uM2" secondAttribute="bottom" id="KVI-ng-dFG"/>
+                            <constraint firstAttribute="trailing" secondItem="DZC-lf-uM2" secondAttribute="trailing" id="Uxe-Fy-SRn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Rde-1V-e8J"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="MyTableView" destination="DZC-lf-uM2" id="tQM-FS-glv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SHU-Np-Hxs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4619" y="-1859"/>
+        </scene>
+        <!--Rush Order Info View Controller-->
+        <scene sceneID="L8i-e1-5qE">
+            <objects>
+                <viewController storyboardIdentifier="RushOrderInfoViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZeA-FR-W43" customClass="RushOrderInfoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hjw-kR-xIk"/>
+                        <viewControllerLayoutGuide type="bottom" id="eEZ-6J-GS6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3hN-pj-Nc7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="qHl-87-c2V">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="eEZ-6J-GS6" firstAttribute="top" secondItem="qHl-87-c2V" secondAttribute="bottom" id="Bgw-Dq-v4n"/>
+                            <constraint firstItem="qHl-87-c2V" firstAttribute="leading" secondItem="3hN-pj-Nc7" secondAttribute="leading" id="UV0-sh-L5k"/>
+                            <constraint firstItem="qHl-87-c2V" firstAttribute="top" secondItem="3hN-pj-Nc7" secondAttribute="top" id="YvI-em-sAQ"/>
+                            <constraint firstAttribute="trailing" secondItem="qHl-87-c2V" secondAttribute="trailing" id="ghu-2N-D7v"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="myTableView" destination="qHl-87-c2V" id="wYC-Ze-HlY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HSx-Q0-8B2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4992" y="-1859"/>
+        </scene>
+    </scenes>
+</document>

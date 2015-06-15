@@ -57,7 +57,7 @@
         self.isMyDome? [self.CellButton setTitle:@"下架" forState:UIControlStateNormal] : [self.CellButton setTitle:@"上架" forState:UIControlStateNormal];
 
          [self.CellButton setTitleColor:[UIColor scrollViewTexturedBackgroundColor] forState:UIControlStateNormal];
-        [self.CellButton setImage:[UIImage imageNamed:@"25_cannel1.png"] forState:UIControlStateNormal];
+        self.isMyDome? [self.CellButton setImage:[UIImage imageNamed:@"25_cannel1.png"] forState:UIControlStateNormal]: [self.CellButton setImage:[UIImage imageNamed:@"25_add.png"] forState:UIControlStateNormal];
     }
 }
 

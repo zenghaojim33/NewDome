@@ -11,11 +11,11 @@
 #import "MyDomeViewController.h"
 #import "GoodsViewController.h"
 ////#import "CommodityViewController.h"
-//#import "OrderManagementViewController.h"
-//#import "OrderViewController.h"
-//#import "RushOrdersViewController.h"
+#import "OrderManagementViewController.h"
+#import "OrderViewController.h"
+#import "RushOrdersViewController.h"
 #import "MyIncomeViewController.h"
-//#import "CustomerViewController.h"
+#import "CustomerViewController.h"
 #import "SpreadDomeViewController.h"
 #import "SettingViewController.h"
 //#import "MyInfoViewController.h"
@@ -142,38 +142,39 @@
 #pragma mark 货品上架
 - (IBAction)TouchGoods:(id)sender
 {
-    GoodsViewController * vc = [[UIStoryboard storyboardWithName:@"GoodsView" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"GoodsViewController"];;
+    GoodsViewController * vc = [[UIStoryboard storyboardWithName:@"GoodsView" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"GoodsViewController"];
+    vc.title = @"服装";
     [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark 销售管理
-//- (IBAction)TouchCommodity:(UIButton *)button
-//{
-//    OrderManagementViewController * vc = [self.storyboard instantiateViewControllerWithIdentifier:@"OrderManagementViewController"];
-//    [self.navigationController pushViewController:vc animated:YES];
-//}
-//#pragma mark 抢单广场
-//- (IBAction)TouchRushOrders:(UIButton *)button
-//{
-//    RushOrdersViewController * vc = [self.storyboard instantiateViewControllerWithIdentifier:@"RushOrdersViewController"];
-//    [self.navigationController pushViewController:vc animated:YES];
-//}
+- (IBAction)TouchCommodity:(UIButton *)button
+{
+    OrderManagementViewController * vc = [[UIStoryboard storyboardWithName:@"Order" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"OrderManagementViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
+}
+#pragma mark 抢单广场
+- (IBAction)TouchRushOrders:(UIButton *)button
+{
+    RushOrdersViewController * vc = [[UIStoryboard storyboardWithName:@"RushOrder" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"RushOrdersViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 #pragma mark 我的财富
 - (IBAction)TouchIncome:(UIButton *)button
 {
-    MyIncomeViewController * vc = [[UIStoryboard storyboardWithName:@"MyIncome" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"MyIncomeViewController"];;
+    MyIncomeViewController * vc = [[UIStoryboard storyboardWithName:@"MyIncome" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"MyIncomeViewController"];
     [self.navigationController pushViewController:vc animated:YES];
 }
-//#pragma mark 客户管理
-//- (IBAction)TouchCustomer:(UIButton *)button
-//{
-//    CustomerViewController * vc = [self.storyboard instantiateViewControllerWithIdentifier:@"CustomerViewController"];
-//    [self.navigationController pushViewController:vc animated:YES];
-//}
+#pragma mark 客户管理
+- (IBAction)TouchCustomer:(UIButton *)button
+{
+    CustomerViewController * vc = [[UIStoryboard storyboardWithName:@"Customer" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"CustomerViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 #pragma mark 我要推广
 - (IBAction)TouchExtension:(UIButton *)button
 {
-    SpreadDomeViewController * vc = [[UIStoryboard storyboardWithName:@"SpreadDome" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"SpreadDomeViewController"];;
+    SpreadDomeViewController * vc = [[UIStoryboard storyboardWithName:@"SpreadDome" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"SpreadDomeViewController"];
     [self.navigationController pushViewController:vc animated:YES];
 }
 #pragma mark 设置
@@ -182,12 +183,14 @@
     SettingViewController * vc = [[UIStoryboard storyboardWithName:@"Setting&QRCode" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"SettingViewController"];
     [self.navigationController pushViewController:vc animated:YES];
 }
-//#pragma mark 订单
-//- (IBAction)TouchOrderButton:(UIButton *)button
-//{
-//    OrderViewController * vc = [self.storyboard instantiateViewControllerWithIdentifier:@"OrderViewController"];
-//    [self.navigationController pushViewController:vc animated:YES];
-//}
+#pragma mark 订单
+- (IBAction)TouchOrderButton:(UIButton *)button
+{
+    OrderViewController * vc = [[UIStoryboard storyboardWithName:@"Order" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"OrderViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
+    
+
+}
 //#pragma mark 个人信息
 - (IBAction)TouchInfoButton:(UIButton *)button
 {
