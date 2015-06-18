@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Spread Dome View Controller-->
@@ -16,17 +17,17 @@
                         <viewControllerLayoutGuide type="bottom" id="VLK-Al-cg0"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="YJe-7C-Tlu">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Uq-vQ-8jF">
-                                <rect key="frame" x="0.0" y="108" width="320" height="460"/>
+                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
                                 <connections>
                                     <segue destination="dNW-fO-rRm" kind="embed" id="hgR-rk-OCD"/>
                                 </connections>
                             </containerView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cFl-Nd-cNW">
-                                <rect key="frame" x="16" y="72" width="288" height="29"/>
+                                <rect key="frame" x="16" y="72" width="343" height="29"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <segments>
                                     <segment title="推广都商"/>
@@ -38,7 +39,7 @@
                                 </connections>
                             </segmentedControl>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0R0-Hk-FPU">
-                                <rect key="frame" x="0.0" y="108" width="320" height="460"/>
+                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
                                 <connections>
                                     <segue destination="hMe-th-plM" kind="embed" id="H0r-Bg-Zhj"/>
                                 </connections>
@@ -60,7 +61,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Rm3-RJ-J5b"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="QRCodeSwitch" destination="cFl-Nd-cNW" id="7uc-Md-ywu"/>
                         <outlet property="buyerContainerView" destination="0R0-Hk-FPU" id="GKs-Eg-9jZ"/>
@@ -80,20 +81,43 @@
                         <viewControllerLayoutGuide type="bottom" id="DSM-AE-6At"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="GuX-hS-V1d">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="559"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="把都美推荐给您的朋友，成功推荐朋友注册开都美，您将获得他的都美销售额的6%分润哦。" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4oN-ii-I9P">
-                                <rect key="frame" x="16" y="8" width="288" height="60"/>
+                                <rect key="frame" x="16" y="8" width="343" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="Gst-c8-gek"/>
+                                    <constraint firstAttribute="height" constant="40" id="Gst-c8-gek"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tyS-dA-vEX">
-                                <rect key="frame" x="16" y="76" width="288" height="288"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mrJ-Pa-qtZ">
+                                <rect key="frame" x="33" y="369" width="140" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="bFM-kC-bMP"/>
+                                </constraints>
+                                <state key="normal" title="分享链接" backgroundImage="ButtonBGView.jpg">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="TouchShareButton:" destination="dNW-fO-rRm" eventType="touchUpInside" id="Lx8-Je-6Ex"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JS1-Gb-2VG">
+                                <rect key="frame" x="203" y="369" width="141" height="34"/>
+                                <state key="normal" title="分享二维码" backgroundImage="ButtonBGView.jpg">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="TouchQRCodeButton:" destination="dNW-fO-rRm" eventType="touchUpInside" id="Syz-8e-mUA"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tyS-dA-vEX">
+                                <rect key="frame" x="33" y="53" width="311" height="311"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="tyS-dA-vEX" secondAttribute="height" multiplier="1:1" id="v5g-QZ-d0H"/>
                                 </constraints>
@@ -109,42 +133,19 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mrJ-Pa-qtZ">
-                                <rect key="frame" x="16" y="385" width="129" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="bFM-kC-bMP"/>
-                                </constraints>
-                                <state key="normal" title="分享链接" backgroundImage="ButtonBGView.jpg">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="TouchShareButton:" destination="dNW-fO-rRm" eventType="touchUpInside" id="Lx8-Je-6Ex"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JS1-Gb-2VG">
-                                <rect key="frame" x="175" y="385" width="129" height="34"/>
-                                <state key="normal" title="分享二维码" backgroundImage="ButtonBGView.jpg">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="TouchQRCodeButton:" destination="dNW-fO-rRm" eventType="touchUpInside" id="Syz-8e-mUA"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="JS1-Gb-2VG" firstAttribute="top" secondItem="tyS-dA-vEX" secondAttribute="bottom" constant="21" id="6HH-m2-uCr"/>
-                            <constraint firstItem="mrJ-Pa-qtZ" firstAttribute="top" secondItem="tyS-dA-vEX" secondAttribute="bottom" constant="21" id="Dyq-1L-fIM"/>
+                            <constraint firstItem="JS1-Gb-2VG" firstAttribute="top" secondItem="tyS-dA-vEX" secondAttribute="bottom" constant="5" id="6HH-m2-uCr"/>
+                            <constraint firstItem="mrJ-Pa-qtZ" firstAttribute="top" secondItem="tyS-dA-vEX" secondAttribute="bottom" constant="5" id="Dyq-1L-fIM"/>
                             <constraint firstItem="4oN-ii-I9P" firstAttribute="leading" secondItem="GuX-hS-V1d" secondAttribute="leadingMargin" id="E0v-PT-kJq"/>
                             <constraint firstItem="4oN-ii-I9P" firstAttribute="centerX" secondItem="tyS-dA-vEX" secondAttribute="centerX" id="FGT-31-Y35"/>
                             <constraint firstItem="4oN-ii-I9P" firstAttribute="trailing" secondItem="GuX-hS-V1d" secondAttribute="trailingMargin" id="GW1-O1-jcR"/>
                             <constraint firstItem="JS1-Gb-2VG" firstAttribute="trailing" secondItem="tyS-dA-vEX" secondAttribute="trailing" id="HOZ-k4-hvg"/>
                             <constraint firstItem="JS1-Gb-2VG" firstAttribute="leading" secondItem="mrJ-Pa-qtZ" secondAttribute="trailing" constant="30" id="Pn2-Jn-dbL"/>
-                            <constraint firstItem="4oN-ii-I9P" firstAttribute="width" secondItem="tyS-dA-vEX" secondAttribute="width" id="R1s-mL-rt0"/>
+                            <constraint firstItem="4oN-ii-I9P" firstAttribute="width" secondItem="tyS-dA-vEX" secondAttribute="width" multiplier="1.1" id="R1s-mL-rt0"/>
                             <constraint firstItem="JS1-Gb-2VG" firstAttribute="height" secondItem="mrJ-Pa-qtZ" secondAttribute="height" id="TgG-sO-BeN"/>
-                            <constraint firstItem="tyS-dA-vEX" firstAttribute="top" secondItem="4oN-ii-I9P" secondAttribute="bottom" constant="8" id="Yr9-nC-ZfG"/>
+                            <constraint firstItem="tyS-dA-vEX" firstAttribute="top" secondItem="4oN-ii-I9P" secondAttribute="bottom" constant="5" id="Yr9-nC-ZfG"/>
                             <constraint firstItem="JS1-Gb-2VG" firstAttribute="width" secondItem="mrJ-Pa-qtZ" secondAttribute="width" id="Zh8-sd-TMh"/>
                             <constraint firstItem="tyS-dA-vEX" firstAttribute="leading" secondItem="mrJ-Pa-qtZ" secondAttribute="leading" id="hzW-5F-wlD"/>
                             <constraint firstAttribute="centerX" secondItem="tyS-dA-vEX" secondAttribute="centerX" id="iP5-VR-dXw"/>
@@ -163,7 +164,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HC9-Sw-eDD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6824" y="-382"/>
+            <point key="canvasLocation" x="6735" y="-111"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5IE-Ff-vzd">
@@ -193,11 +194,11 @@
                         <viewControllerLayoutGuide type="bottom" id="yx6-o2-MSD"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="4Eo-5E-43M">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="559"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bFQ-ZG-YnU">
-                                <rect key="frame" x="16" y="76" width="288" height="288"/>
+                                <rect key="frame" x="32" y="56" width="312" height="312"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="bFQ-ZG-YnU" secondAttribute="height" multiplier="1:1" id="dT3-yO-zFU"/>
                                 </constraints>
@@ -214,7 +215,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkj-SZ-N3b">
-                                <rect key="frame" x="16" y="385" width="129" height="34"/>
+                                <rect key="frame" x="32" y="373" width="141" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="Bzb-6n-ppr"/>
                                 </constraints>
@@ -227,7 +228,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jjF-5V-APR">
-                                <rect key="frame" x="175" y="385" width="129" height="34"/>
+                                <rect key="frame" x="203" y="373" width="141" height="34"/>
                                 <state key="normal" title="分享二维码" backgroundImage="ButtonBGView.jpg">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -237,10 +238,10 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" text="把都美推荐给您的朋友，成功推荐朋友注册都美商城，他购买商品产生利润的52%永远绑定给你" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1Ck-Hf-3qg">
-                                <rect key="frame" x="16" y="8" width="288" height="60"/>
+                                <rect key="frame" x="16" y="8" width="343" height="40"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="PSS-5o-hXr"/>
+                                    <constraint firstAttribute="height" constant="40" id="PSS-5o-hXr"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -250,12 +251,12 @@
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="bFQ-ZG-YnU" secondAttribute="centerX" id="2Gg-zV-qdx"/>
                             <constraint firstItem="1Ck-Hf-3qg" firstAttribute="leading" secondItem="4Eo-5E-43M" secondAttribute="leadingMargin" id="3EK-Qa-kt8"/>
-                            <constraint firstItem="jjF-5V-APR" firstAttribute="top" secondItem="bFQ-ZG-YnU" secondAttribute="bottom" constant="21" id="ElZ-i7-maw"/>
+                            <constraint firstItem="jjF-5V-APR" firstAttribute="top" secondItem="bFQ-ZG-YnU" secondAttribute="bottom" constant="5" id="ElZ-i7-maw"/>
                             <constraint firstItem="jjF-5V-APR" firstAttribute="leading" secondItem="hkj-SZ-N3b" secondAttribute="trailing" constant="30" id="PLi-B3-3D7"/>
                             <constraint firstItem="bFQ-ZG-YnU" firstAttribute="leading" secondItem="hkj-SZ-N3b" secondAttribute="leading" id="XZh-Bo-MoR"/>
                             <constraint firstItem="1Ck-Hf-3qg" firstAttribute="top" secondItem="Uch-QI-dRe" secondAttribute="bottom" constant="8" id="Xps-pD-tdW"/>
-                            <constraint firstItem="hkj-SZ-N3b" firstAttribute="top" secondItem="bFQ-ZG-YnU" secondAttribute="bottom" constant="21" id="ZUt-U9-Hxb"/>
-                            <constraint firstItem="1Ck-Hf-3qg" firstAttribute="width" secondItem="bFQ-ZG-YnU" secondAttribute="width" id="k3f-VN-cp4"/>
+                            <constraint firstItem="hkj-SZ-N3b" firstAttribute="top" secondItem="bFQ-ZG-YnU" secondAttribute="bottom" constant="5" id="ZUt-U9-Hxb"/>
+                            <constraint firstItem="1Ck-Hf-3qg" firstAttribute="width" secondItem="bFQ-ZG-YnU" secondAttribute="width" multiplier="1.1" id="k3f-VN-cp4"/>
                             <constraint firstItem="jjF-5V-APR" firstAttribute="height" secondItem="hkj-SZ-N3b" secondAttribute="height" id="o4Q-PW-3hT"/>
                             <constraint firstItem="1Ck-Hf-3qg" firstAttribute="trailing" secondItem="4Eo-5E-43M" secondAttribute="trailingMargin" id="oy8-yy-4SZ"/>
                             <constraint firstItem="jjF-5V-APR" firstAttribute="width" secondItem="hkj-SZ-N3b" secondAttribute="width" id="psC-8y-oRf"/>
@@ -276,7 +277,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xcu-FN-8cM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6824" y="298"/>
+            <point key="canvasLocation" x="6734.5" y="597.5"/>
         </scene>
     </scenes>
     <resources>

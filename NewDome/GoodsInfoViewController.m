@@ -206,7 +206,54 @@
 #pragma mark ---- Private Methods
 - (IBAction)beginOnSale:(id)sender {
     
-    
+    if (_selectedModelArray.count == 0){
+        
+        [UIAlertView bk_alertViewWithTitle:@"请至少选择一件商品"];
+        return;
+        
+    }else{
+        
+        MBProgressHUD * hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        hud.labelText = @"正在上架商品";
+        NSMutableString * selectedProductString = [NSMutableString stringWithString:@""];
+        NSMutableArray * selectedIndexPathes = [NSMutableArray array];
+        for (MyDomeProductModel * model in _selectedModelArray){
+            [selectedProductString appendFormat:@"%@,",model.productId];
+            [selectedIndexPathes addObject:model.indexPath];
+        }
+        
+        //删除最后一个逗号
+        NSString * deletedProductString = [selectedProductString substringToIndex:(selectedProductString.length -1)];
+        
+        //不知道为嘛要给uid加单引号
+        
+        NSDictionary * postDict = @{@"uid":_userInfo.userID,
+                                    @"pidlist":deletedProductString,
+                                    @"isshow":@1};
+        NSString * jsonData = [postDict jsonStringWithPrettyPrint:YES];
+        NSString * link = [[NSString stringWithFormat:OnOffSaleAPI,jsonData] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        
+        @weakify(self);
+        [HTTPRequestManager getURL:link andParameter:nil onCompletion:^(id responseObject, NSError *error) {
+            @strongify(self)
+            if (responseObject[@"status"]){
+                
+                UIAlertView * alertView = [[UIAlertView alloc]init];
+                alertView.message = @"上架成功";
+                [alertView addButtonWithTitle:@"确定"];
+                [alertView show];
+                
+                
+            }
+
+            [self.myDomeTableView reloadData];
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            
+            
+        }];
+        
+        
+    }
     
     
     
@@ -223,7 +270,7 @@
     [_selectedModelArray containsObject:model] ? [_selectedModelArray removeObject:model] : [_selectedModelArray addObject: model];
     
     
-    _selectedModelArray.count == 0 ? [self.confirmButton setTitle:@"上架" forState:UIControlStateNormal] : [self.confirmButton setTitle:[NSString stringWithFormat:@"上架(%lu)",_selectedModelArray.count] forState:UIControlStateNormal];
+    _selectedModelArray.count == 0 ? [self.confirmButton setTitle:@"上架" forState:UIControlStateNormal] : [self.confirmButton setTitle:[NSString stringWithFormat:@"上架(%d)",_selectedModelArray.count] forState:UIControlStateNormal];
     
     [self.myDomeTableView reloadData];
 }

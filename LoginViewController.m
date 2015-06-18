@@ -130,9 +130,9 @@
     {
         //卖家
 
-        
-        HomeViewController * vc = [[UIStoryboard storyboardWithName:@"HomeView" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"HomeViewNavigationController"];
-        [self.navigationController presentViewController:vc animated:YES completion:nil];
+   
+        UINavigationController * homeViewNav = [[UIStoryboard storyboardWithName:@"HomeView" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"HomeViewNavigationController"];
+        [self.navigationController presentViewController:homeViewNav animated:YES completion:nil];
         
         
         

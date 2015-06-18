@@ -29,8 +29,8 @@
     NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName, [UIFont fontWithName:@"Arial-Black" size:20.0f],NSFontAttributeName,nil];
     [[UINavigationBar appearance]setTitleTextAttributes:dic];
     [[UINavigationBar appearance]setTintColor:[UIColor whiteColor]];
-    [UINavigationBar appearance].barStyle = UIStatusBarStyleDefault;
-    
+//    [UINavigationBar appearance].barStyle = UIBarStyleBlack;
+    [[UIApplication sharedApplication]setStatusBarStyle:UIStatusBarStyleLightContent];
     
     //推送
     [self initPush:application];
