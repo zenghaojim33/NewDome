@@ -20,6 +20,8 @@
 @interface MyDomeViewController ()<UITableViewDataSource,UITableViewDelegate,MyDomeTableViewCellDelegate,UMSocialUIDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *myDomeTableView;
 @property (weak, nonatomic) IBOutlet UIButton *confirmButton;
+@property(nonatomic,strong)NSOperationQueue * operationQueue;
+
 
 @end
 
@@ -66,7 +68,7 @@
     _valueid = _categoryid = @"";
     _sort = @"price";
     
-    //
+
     
     [self.myDomeTableView addLegendFooterWithRefreshingTarget:self refreshingAction:@selector(footerRefresh)];
     
@@ -102,9 +104,17 @@
     hud.labelText = @"加载商品中...";
     
     @weakify(self);
-    [HTTPRequestManager getURL:link andParameter:nil onCompletion:^(id responseObject, NSError *error) {
+    AFHTTPRequestOperation * getListOperation = [HTTPRequestManager getURL:link andParameter:nil onCompletion:^(id responseObject, NSError *error) {
         @strongify(self);
-
+        if (error)
+        {
+            hud.mode = MBProgressHUDModeText;
+            hud.labelText = [error localizedDescription];
+            [hud hide:YES afterDelay:1];
+            [self.myDomeTableView.footer endRefreshing];
+            return;
+        }
+        
         NSMutableArray * response = [responseObject copy];
         for (NSInteger i=0;i < response.count;i++){
             
@@ -122,6 +132,8 @@
         }
         
     }];
+    
+    [self.operationQueue addOperation:getListOperation];
     
     
 }
@@ -346,7 +358,7 @@
         NSString * link = [[NSString stringWithFormat:OnOffSaleAPI,jsonData] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         
         @weakify(self);
-        [HTTPRequestManager getURL:link andParameter:nil onCompletion:^(id responseObject, NSError *error) {
+        AFHTTPRequestOperation * downOperation = [HTTPRequestManager getURL:link andParameter:nil onCompletion:^(id responseObject, NSError *error) {
             @strongify(self)
             if (responseObject[@"status"]){
                 
@@ -375,6 +387,7 @@
             
         }];
         
+        [self.operationQueue addOperation:downOperation];
         
     }
     
@@ -385,6 +398,16 @@
 -(void)footerRefresh{
     _page ++;
     [self getData];
+}
+
+
+-(void)dealloc
+{
+    
+    [self.operationQueue cancelAllOperations];
+    
+    
+    
 }
 
 @end

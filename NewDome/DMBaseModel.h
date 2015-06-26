@@ -84,7 +84,8 @@
  *
  *  @return Tmcache
  */
-+ (TMCache*) getCache;
+
+
 
 
 

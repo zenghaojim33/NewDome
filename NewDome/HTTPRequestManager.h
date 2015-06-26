@@ -7,7 +7,7 @@
 //
 
 #import "AFHTTPRequestOperationManager.h"
-
+#import "DMBaseModel.h"
 @interface HTTPRequestManager : AFHTTPRequestOperationManager
 typedef void(^responseBlock)(id responseObject, NSError *error);
 typedef void(^responseBlockWithStatusCode)(NSInteger statusCode, NSError *error);
@@ -25,7 +25,7 @@ typedef void(^responseBlockWithStatusCode)(NSInteger statusCode, NSError *error)
  *  @param key   对应的Key
  */
 
-//+(void)saveObjectToCache:(DSBaseModel*)model andKey:(NSString*)key;
++(void)saveObjectToCache:(DMBaseModel*)model andKey:(NSString*)key;
 
 
 

@@ -129,7 +129,7 @@
     if ([usertype isEqualToString:@"4"])
     {
         //卖家
-
+        
    
         UINavigationController * homeViewNav = [[UIStoryboard storyboardWithName:@"HomeView" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"HomeViewNavigationController"];
         [self.navigationController presentViewController:homeViewNav animated:YES completion:nil];
