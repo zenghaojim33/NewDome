@@ -11,12 +11,14 @@
 #import "UserInfoModel.h"
 #import "HomeViewController.h"
 #import "UpGradeViewController.h"
+#import <SSKeychain.h>
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextfield;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextfield;
 
 @end
 
+#define DomePasswordService @"DomePasswordService"
 @implementation LoginViewController{
     
     UserInfoModel * _userInfo;
@@ -38,11 +40,12 @@
     }
     
     NSString * phone = [USER_DEFAULT objectForKey:@"phone"];
-    NSString * password = [USER_DEFAULT objectForKey:@"password"];
+    NSString * password = [SSKeychain passwordForService:DomePasswordService account:phone];
+    if (phone && password){
     
-    self.userNameTextfield.text = phone;
-    self.passwordTextfield.text = password;
-    
+        self.userNameTextfield.text = phone;
+        self.passwordTextfield.text = password;
+    }
     
 }
 
@@ -114,7 +117,8 @@
 -(void)updateData:(NSDictionary *)dict{
     
     [USER_DEFAULT setObject:self.userNameTextfield.text forKey:@"phone"];
-    [USER_DEFAULT setObject:self.passwordTextfield.text forKey:@"password"];
+   // [USER_DEFAULT setObject:self.passwordTextfield.text forKey:@"password"];
+    [SSKeychain setPassword:self.passwordTextfield.text forService:DomePasswordService account:self.userNameTextfield.text];
     
     
     _userInfo = [UserInfoModel shareUserInfo];
@@ -128,9 +132,7 @@
     NSString * usertype = [dict objectForKey:@"usertype"];
     if ([usertype isEqualToString:@"4"])
     {
-        //卖家
-        
-   
+
         UINavigationController * homeViewNav = [[UIStoryboard storyboardWithName:@"HomeView" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"HomeViewNavigationController"];
         [self.navigationController presentViewController:homeViewNav animated:YES completion:nil];
         
@@ -144,10 +146,7 @@
         [self.navigationController pushViewController:vc animated:YES];
     }
     
-    
 
-    
-    
     
 }
 

@@ -67,9 +67,7 @@
     _page = 1;
     _valueid = _categoryid = @"";
     _sort = @"price";
-    
 
-    
     [self.myDomeTableView addLegendFooterWithRefreshingTarget:self refreshingAction:@selector(footerRefresh)];
     
     
@@ -78,9 +76,6 @@
 }
 
 #pragma mark ---- Private Methods
-
-
-
 
 -(void)getData{
     
@@ -189,7 +184,7 @@
     UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
     
     pasteboard.string = link;
-    
+
     UIAlertView * alert = [UIAlertView bk_alertViewWithTitle:@"复制成功"];
     [alert show];
     
